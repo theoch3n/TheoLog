@@ -17,7 +17,7 @@
   "autoBackupAfterFileChange": false,
   "treeStructure": false,
   "refreshSourceControl": true,
-  "basePath": "",
+  "basePath": "D:\\Notes\\TheoLog",
   "differentIntervalCommitAndPush": true,
   "changedFilesInStatusBar": true,
   "showedMobileNotice": true,
