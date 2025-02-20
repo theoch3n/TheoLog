@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "22dc95e16002bb6a",
+        "id": "d9ff83b03808a2ea",
         "type": "tabs",
         "children": [
           {
-            "id": "a564ea8a8a84cb86",
+            "id": "2a47aa6ddbbb4073",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "開發日誌/250217.md",
+                "file": "DevDiary/2025.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "250217"
+              "title": "2025"
             }
           }
         ]
@@ -164,7 +164,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -177,10 +178,14 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "f17fcca99fa509b6",
+  "active": "2a47aa6ddbbb4073",
   "lastOpenFiles": [
+    "DevDiary/2025.md",
+    "DevDiary/2025FEB/250220.md",
+    "修復 Bootstrap Modal 切換 Router 後的樣式殘留(灰色遮罩)問題.md",
+    "FixedBug",
+    "DevDiary/2025FEB",
     "歡迎.md",
-    "開發日誌/250217.md",
-    "開發日誌"
+    "DevDiary"
   ]
 }
