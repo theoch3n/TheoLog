@@ -1,6 +1,6 @@
 #### 📅 **Date**: 2025-03-12
 
-#### 🔖 **Tags**: `#Basic` `#InterviewQuestions`
+#### 🔖 **Tags**: #Basic #InterviewQuestions
 
 ---
 

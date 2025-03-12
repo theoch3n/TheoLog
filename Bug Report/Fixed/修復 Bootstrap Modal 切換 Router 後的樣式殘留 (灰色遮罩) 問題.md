@@ -1,6 +1,6 @@
 #### 📅 **Date**: 2025-02-20
 
-#### 🔖 **Tags**: `#Vue` `#Bootstrap` `#BugFix`
+#### 🔖 **Tags**: #Vue #Bootstrap #BugFix
 
 ---
 

@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "a255dcbc7e11fe84",
+        "id": "c26b12f8be716d82",
         "type": "tabs",
         "children": [
           {
-            "id": "a475133ad531c29f",
+            "id": "bd284160d4b5dd48",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "關聯圖檢視"
+              "type": "markdown",
+              "state": {
+                "file": "Interview Questions/易可思/輸入網址後，網頁渲染的完整流程.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "輸入網址後，網頁渲染的完整流程"
             }
           }
         ]
@@ -49,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#DesignPattern",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -136,12 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "Interview Questions/易可思/輸入網址後，網頁渲染的完整流程.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大綱"
+              "title": "輸入網址後，網頁渲染的完整流程 的大綱"
             }
           },
           {
@@ -155,7 +160,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -172,21 +177,24 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "a475133ad531c29f",
+  "active": "bd284160d4b5dd48",
   "lastOpenFiles": [
+    "Interview Questions/易可思/說明 悲觀鎖 & 樂觀鎖.md",
     "Interview Questions/安然/迴圈.md",
-    "Interview Questions/安然/MVC是什麼.md",
     "Interview Questions/安然/說明 OOP 物件導向.md",
+    "Interview Questions/安然/MVC是什麼.md",
+    "Interview Questions/易可思/河內塔遞迴.md",
+    "Template/Template/Interview Questions Template.md",
+    "Template/Template.md",
+    "Template/Template/Bug Report Template.md",
+    "Bug Report/Fixed/修復 Bootstrap Modal 切換 Router 後的樣式殘留 (灰色遮罩) 問題.md",
+    "Dev Diary/2025/FEB/20250220.md",
+    "Dev Diary/2025/2025.md",
+    "Dev Diary/2025/FEB/FEB.md",
     "Interview Questions/勝海/瀏覽器中的事件循環 Event Loop.md",
     "Interview Questions/易可思/Promise & Async Await 的功用與區別.md",
     "Interview Questions/易可思/輸入網址後，網頁渲染的完整流程.md",
-    "Interview Questions/易可思/說明 悲觀鎖 & 樂觀鎖.md",
-    "Interview Questions/易可思/河內塔遞迴.md",
-    "Bug Report/Fixed/修復 Bootstrap Modal 切換 Router 後的樣式殘留 (灰色遮罩) 問題.md",
-    "Template/Template/Bug Report Template.md",
     "README.md",
-    "Dev Diary/2025/FEB/FEB.md",
-    "Dev Diary/2025/FEB/0220.md",
     "未命名 1.canvas",
     "未命名.canvas",
     "Interview Questions/勝海/什麼是 SOLID 原則？.md",
@@ -198,15 +206,12 @@
     "Interview Questions/易可思/Virtual DOM 的理解.md",
     "Interview Questions/易可思",
     "Interview Questions",
-    "Template/Template/Interview Questions Template.md",
-    "Template/Template.md",
     "Template/Template",
     "修復 Bootstrap Modal 切換 Router 後的樣式殘留(灰色遮罩)問題.md",
     "Template",
     "Bug Report/Fixing",
     "Bug Report/Fixed",
     "2025-02-20.md",
-    "Dev Diary/2025/2025.md",
     "Dev Diary/2025/FEB",
     "Bug Report",
     "歡迎.md"
