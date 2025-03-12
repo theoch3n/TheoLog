@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "642a9fd384cd6f56",
+        "id": "3c99a4283260afbf",
         "type": "tabs",
         "children": [
           {
-            "id": "920d7930ddeb148b",
+            "id": "320ddcb6419a9dde",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Interview Questions/安然/OOP 物件導向.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新分頁"
+              "title": "OOP 物件導向"
             }
           }
         ]
@@ -159,8 +163,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -173,16 +176,35 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "920d7930ddeb148b",
+  "active": "320ddcb6419a9dde",
   "lastOpenFiles": [
+    "Interview Questions/安然/迴圈.md",
+    "Interview Questions/安然/MVC是什麼.md",
+    "BugReport/Fixed/修復 Bootstrap Modal 切換 Router 後的樣式殘留 (灰色遮罩) 問題.md",
     "DevDiary/2025/FEB/FEB.md",
     "DevDiary/2025/FEB/0220.md",
-    "Template/Template",
-    "未命名",
-    "Template/Template.md",
-    "修復 Bootstrap Modal 切換 Router 後的樣式殘留(灰色遮罩)問題.md",
-    "BugReport/Fixed/修復 Bootstrap Modal 切換 Router 後的樣式殘留 (灰色遮罩) 問題.md",
+    "未命名 1.canvas",
+    "未命名.canvas",
+    "Interview Questions/勝海/什麼是 SOLID 原則？.md",
+    "Interview Questions/勝海/MySQL lock for update.md",
+    "Interview Questions/勝海/瀏覽器中的事件循環 Event Loop.md",
+    "Interview Questions/勝海",
+    "Interview Questions/安然/OOP 物件導向.md",
+    "Interview Questions/易可思/Fibonacci sequence 費波那契數列.md",
+    "Interview Questions/易可思/Process 是什麼？.md",
+    "Interview Questions/安然",
+    "Interview Questions/易可思/輸入網址後，網頁渲染的完整流程.md",
+    "Interview Questions/易可思/河內塔遞迴.md",
+    "Interview Questions/易可思/Virtual DOM 的理解.md",
+    "Interview Questions/易可思/Promise & Async Await 的功用與區別.md",
+    "Interview Questions/易可思/說明 悲觀鎖 & 樂觀鎖.md",
     "Template/Template/Bug Report Template.md",
+    "Interview Questions/易可思",
+    "Interview Questions",
+    "Template/Template/Interview Questions Template.md",
+    "Template/Template.md",
+    "Template/Template",
+    "修復 Bootstrap Modal 切換 Router 後的樣式殘留(灰色遮罩)問題.md",
     "Template",
     "BugReport/Fixing",
     "BugReport/Fixed",
@@ -190,8 +212,6 @@
     "DevDiary/2025/2025.md",
     "DevDiary/2025/FEB",
     "BugReport",
-    "DevDiary/2025",
-    "歡迎.md",
-    "DevDiary"
+    "歡迎.md"
   ]
 }
