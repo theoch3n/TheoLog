@@ -1,7 +1,5 @@
 #### 📅 **Date**: 2025-02-20
 
-#### 👨‍💻 **Author**: [陳泰智]
-
 #### 🔖 **Tags**: `#Vue` `#Bootstrap` `#BugFix`
 
 ---
@@ -35,7 +33,7 @@
 
 ### **📌 具體修改內容**
 
-#### **1️⃣ 修正 `onMounted()`**
+#### **1. 修正 `onMounted()`**
 
 ```JavaScript
 // 渲染頁面後清除 body 樣式
@@ -49,7 +47,7 @@ onMounted(() => {
 });
 ```
 
-#### **2️⃣ 修正 `onUnmounted()`**
+#### **2. 修正 `onUnmounted()`**
 
 ```JavaScript
 // 當組件卸載時，也確保 body 樣式恢復
@@ -63,13 +61,13 @@ onUnmounted(() => {
 ---
 
 ## **🎯 修正結果**
-✅ **進入 `testPayment.vue` 時，自動清除 `modal-backdrop`**  
-✅ **恢復 `body` 樣式，確保可正常滾動**  
-✅ **Vue Router 切換後不會再出現灰色遮罩**  
-✅ **所有 `modal` 在離開 `ProductList.vue` 後被正確釋放**
+- **進入 `testPayment.vue` 時，自動清除 `modal-backdrop`**  
+- **恢復 `body` 樣式，確保可正常滾動**  
+- **Vue Router 切換後不會再出現灰色遮罩**  
+- **所有 `modal` 在離開 `ProductList.vue` 後被正確釋放**
 
 ---
 
 ## **🛠️ 未來改進**
-- 🏗 **最佳化 Bootstrap `modal` 的管理**：可以考慮 **在 Vue Router `beforeRouteLeave` 鉤子中手動清理 `modal`**，以防止類似問題發生。
-- ⚡ **改用 Vue 的 `v-dialog` 取代 Bootstrap `modal`**：Vue 的 `v-dialog` 可以自動管理開關狀態，避免 `modal-backdrop` 殘留。
+- **最佳化 Bootstrap `modal` 的管理**：可以考慮 **在 Vue Router `beforeRouteLeave` 鉤子中手動清理 `modal`**，以防止類似問題發生。
+- **改用 Vue 的 `v-dialog` 取代 Bootstrap `modal`**：Vue 的 `v-dialog` 可以自動管理開關狀態，避免 `modal-backdrop` 殘留。
