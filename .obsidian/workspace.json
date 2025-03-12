@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Interview Questions/安然/迴圈.md",
+                "file": "Interview Questions/安然/MVC是什麼.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "迴圈"
+              "title": "MVC是什麼"
             }
           }
         ]
@@ -140,12 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "Interview Questions/安然/MVC是什麼.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大綱"
+              "title": "MVC是什麼 的大綱"
             }
           },
           {
@@ -159,7 +160,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -178,11 +179,11 @@
   },
   "active": "a475133ad531c29f",
   "lastOpenFiles": [
+    "Interview Questions/安然/迴圈.md",
+    "Interview Questions/安然/MVC是什麼.md",
     "Bug Report/Fixed/修復 Bootstrap Modal 切換 Router 後的樣式殘留 (灰色遮罩) 問題.md",
     "Template/Template/Bug Report Template.md",
-    "Interview Questions/安然/迴圈.md",
     "Interview Questions/安然/OOP 物件導向.md",
-    "Interview Questions/安然/MVC是什麼.md",
     "README.md",
     "Dev Diary/2025/FEB/FEB.md",
     "Dev Diary/2025/FEB/0220.md",
