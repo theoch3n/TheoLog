@@ -4,17 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "15cca4b20d11c07a",
+        "id": "642a9fd384cd6f56",
         "type": "tabs",
         "children": [
           {
-            "id": "ed3b2bdbc78e7682",
+            "id": "920d7930ddeb148b",
             "type": "leaf",
             "state": {
-              "type": "graph",
+              "type": "empty",
               "state": {},
-              "icon": "lucide-git-fork",
-              "title": "關聯圖檢視"
+              "icon": "lucide-file",
+              "title": "新分頁"
             }
           }
         ]
@@ -136,13 +136,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "開發日誌/250216.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "250216 的大綱"
+              "title": "大綱"
             }
           },
           {
@@ -160,7 +159,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -173,7 +173,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "ed3b2bdbc78e7682",
+  "active": "920d7930ddeb148b",
   "lastOpenFiles": [
     "DevDiary/2025/FEB/FEB.md",
     "DevDiary/2025/FEB/0220.md",
