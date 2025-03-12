@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Interview Questions/易可思/輸入網址後，網頁渲染的完整流程.md",
+                "file": "Interview Questions/易可思/說明 悲觀鎖 & 樂觀鎖.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "輸入網址後，網頁渲染的完整流程"
+              "title": "說明 悲觀鎖 & 樂觀鎖"
             }
           }
         ]
@@ -140,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Interview Questions/易可思/輸入網址後，網頁渲染的完整流程.md",
+                "file": "Interview Questions/易可思/說明 悲觀鎖 & 樂觀鎖.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "輸入網址後，網頁渲染的完整流程 的大綱"
+              "title": "說明 悲觀鎖 & 樂觀鎖 的大綱"
             }
           },
           {
@@ -179,6 +179,7 @@
   },
   "active": "bd284160d4b5dd48",
   "lastOpenFiles": [
+    "Interview Questions/易可思/輸入網址後，網頁渲染的完整流程.md",
     "Interview Questions/易可思/說明 悲觀鎖 & 樂觀鎖.md",
     "Interview Questions/安然/迴圈.md",
     "Interview Questions/安然/說明 OOP 物件導向.md",
@@ -193,7 +194,6 @@
     "Dev Diary/2025/FEB/FEB.md",
     "Interview Questions/勝海/瀏覽器中的事件循環 Event Loop.md",
     "Interview Questions/易可思/Promise & Async Await 的功用與區別.md",
-    "Interview Questions/易可思/輸入網址後，網頁渲染的完整流程.md",
     "README.md",
     "未命名 1.canvas",
     "未命名.canvas",
