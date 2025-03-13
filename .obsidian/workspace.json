@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Interview Questions/哲煜/如何處理查詢大量數據導致 Timeout 問題？.md",
+                "file": "Interview Questions/哲煜/(未完成)什麼是 MVVM（Model-View-ViewModel）？.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "如何處理查詢大量數據導致 Timeout 問題？"
+              "title": "(未完成)什麼是 MVVM（Model-View-ViewModel）？"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#dotNET",
+                "query": "tag:#MVC",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -140,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Interview Questions/哲煜/如何處理查詢大量數據導致 Timeout 問題？.md",
+                "file": "Interview Questions/哲煜/(未完成)什麼是 MVVM（Model-View-ViewModel）？.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "如何處理查詢大量數據導致 Timeout 問題？ 的大綱"
+              "title": "(未完成)什麼是 MVVM（Model-View-ViewModel）？ 的大綱"
             }
           },
           {
@@ -160,7 +160,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -177,34 +177,34 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "2472bc96d02edad0",
+  "active": "f17fcca99fa509b6",
   "lastOpenFiles": [
-    "Interview Questions/哲煜/(未完成)IQueryable vs IEnumerable vs ToList() 的運作原理.md",
-    "Interview Questions/哲煜/如何處理查詢大量數據導致 Timeout 問題？.md",
-    "Interview Questions/哲煜/為什麼資料庫中的index可以增加搜尋速度？.md",
-    "Interview Questions/哲煜/(未完成)Laravel 的生命週期（Lifecycle）.md",
-    "Interview Questions/哲煜/(未完成)資料庫的多對多關係（Many-to-Many Relationship）.md",
-    "Interview Questions/哲煜/Main thread 遇到 async, await 會如何運作？.md",
-    "Interview Questions/哲煜/async、await、Task 的運作.md",
+    "Interview Questions/哲煜/(未完成)什麼是 DI（Dependency Injection，依賴注入）？.md",
+    "Interview Questions/哲煜/(未完成)什麼是 MVVM（Model-View-ViewModel）？.md",
+    "Interview Questions/哲煜/(未完成)比較 .NET Framework vs .NET Core 的差異.md",
+    "Interview Questions/哲煜/(未完成)如何限制 API 只能被呼叫一次？（防止重複請求）.md",
+    "Interview Questions/哲煜/(未完成)API 授權方式（Authentication & Authorization）.md",
+    "Interview Questions/哲煜/Array 和 List 的差異（CSharp、Java、JavaScript）.md",
     "Interview Questions/哲煜/OAuth 1 vs OAuth 2 差異.md",
+    "Interview Questions/哲煜/async、await、Task 的運作.md",
+    "Interview Questions/哲煜/為什麼資料庫中的index可以增加搜尋速度？.md",
     "Interview Questions/哲煜/(未完成)Vue.js 的生命週期（Lifecycle）.md",
     "Interview Questions/哲煜/(未完成)Vue 響應式背後的原理 & 使用純 JavaScript 如何實作？.md",
-    "Interview Questions/哲煜/(未完成)如何在 Vue 中使用 jQuery？.md",
-    "Interview Questions/易可思/輸入網址後，網頁渲染的完整流程.md",
-    "Interview Questions/易可思/說明 悲觀鎖 & 樂觀鎖.md",
-    "Interview Questions/易可思/河內塔遞迴.md",
-    "Interview Questions/易可思/(未完成)Virtual DOM 的理解.md",
-    "Interview Questions/易可思/(未完成)Promise & Async Await 的功用與區別.md",
-    "Interview Questions/易可思/(未完成)Process 是什麼？.md",
-    "Interview Questions/易可思/(未完成)Fibonacci sequence 費波那契數列.md",
+    "Interview Questions/哲煜/(未完成)IQueryable vs IEnumerable vs ToList() 的運作原理.md",
+    "Interview Questions/哲煜/(未完成)如何處理查詢大量數據導致 Timeout 問題？.md",
+    "Interview Questions/哲煜/(未完成)批次處理（Batch Processing）.md",
+    "Interview Questions/哲煜/(未完成)資料庫的多對多關係（Many-to-Many Relationship）.md",
     "Interview Questions/安然/MVC是什麼.md",
     "Interview Questions/安然/說明 OOP 物件導向.md",
     "Interview Questions/安然/迴圈.md",
-    "Interview Questions/勝海/(未完成)MySQL lock for update.md",
-    "Interview Questions/勝海/(未完成)瀏覽器中的事件循環 Event Loop.md",
-    "Interview Questions/勝海/(未完成)什麼是 SOLID 原則？.md",
+    "Interview Questions/易可思/河內塔遞迴.md",
+    "Interview Questions/易可思/輸入網址後，網頁渲染的完整流程.md",
+    "Interview Questions/易可思/說明 悲觀鎖 & 樂觀鎖.md",
+    "Interview Questions/哲煜/(未完成)如何在 Vue 中使用 jQuery？.md",
+    "Interview Questions/哲煜/Main thread 遇到 async, await 會如何運作？.md",
+    "Interview Questions/哲煜/(未完成)Laravel 的生命週期（Lifecycle）.md",
     "Template/Template/Interview Questions Template.md",
-    "Bug Report/Fixed/修復 Bootstrap Modal 切換 Router 後的樣式殘留 (灰色遮罩) 問題.md",
+    "Template/Template/Bug Report Template.md",
     "Interview Questions/哲煜",
     "未命名 1.canvas",
     "未命名.canvas",
