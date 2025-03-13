@@ -1,4 +1,4 @@
-#### 📅 **Date**: 2025-03-12
+#### 📅 **Date**: 2025-03-14
 
 #### 🔖 **Tags**: #Basic #BackEnd #InterviewQuestions
 
@@ -152,7 +152,7 @@ Set-Cookie: sessionId=abcdef123456;
 
 ---
 
-## **📌 總結**
+## **💡 總結**
 
 1. **內部 API** → 使用 `API Key`  
 2. **測試 API** → `Basic Auth`（不建議）  
