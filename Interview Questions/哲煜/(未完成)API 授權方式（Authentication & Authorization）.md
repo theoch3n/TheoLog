@@ -16,7 +16,6 @@ API 授權是確保 **API 安全性** 的關鍵，常見的授權方式包括 **
 |**Authorization（授權）**|驗證 **請求者是否有權存取資源**（Are you allowed?）|
 
 📌 **例如**
-
 - **Authentication**：使用者登入時提供帳號 & 密碼
 - **Authorization**：只有管理員能存取 `admin` API
 
@@ -42,14 +41,12 @@ API Key 是一組 **唯一的密鑰**，用來識別 API 用戶。
 
 📌 **使用方式**
 
-http
-
-複製編輯
-
-`GET /api/orders Authorization: ApiKey abc123xyz`
+```http
+GET /api/orders 
+Authorization: ApiKey abc123xyz
+```
 
 📌 **優點**
-
 - 簡單、易於實作 📌 **缺點**
 - **容易被攔截，需搭配 HTTPS**
 - **無法撤銷單個 API Key**
@@ -62,15 +59,14 @@ http
 
 📌 **使用方式**
 
-http
-
-複製編輯
-
-`Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=  // Base64(username:password)`
+```http
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=  // Base64(username:password)
+```
 
 📌 **優點**
+- 實作簡單 
 
-- 實作簡單 📌 **缺點**
+📌 **缺點**
 - **需要每次發送用戶名 & 密碼（容易被攔截）**
 - **不適用於現代應用（推薦 OAuth 或 JWT）**
 
@@ -80,21 +76,19 @@ http
 
 OAuth 2.0 是 **業界標準的授權方式**，適用於**社群登入、第三方 API 授權**。
 
-📌 **流程** 1️⃣ **用戶登入（Google、Facebook）**  
-2️⃣ **取得 `Authorization Code`**  
-3️⃣ **交換 `Access Token`**  
-4️⃣ **使用 `Access Token` 存取 API**
+📌 **流程** 
+1. **用戶登入（Google、Facebook）**  
+2. **取得 `Authorization Code`**  
+3. **交換 `Access Token`**  
+4. **使用 `Access Token` 存取 API**
 
 📌 **使用方式**
 
-http
-
-複製編輯
-
-`Authorization: Bearer ya29.a0AfH6SM...`
+```http
+Authorization: Bearer ya29.a0AfH6SM...
+```
 
 📌 **優點**
-
 - **適合第三方 API（如 Google API）**
 - **可設定 Token 失效時間**
 - **支援不同授權方式（如 `Authorization Code`、`Client Credentials`）**
@@ -107,25 +101,22 @@ JWT 是一種 **無狀態（stateless）** 的授權機制，適合 Web & Mobile
 
 📌 **JWT 結構**
 
-css
-
-複製編輯
-
-`Header.Payload.Signature`
+```css
+Header.Payload.Signature
+```
 
 📌 **使用方式**
 
-http
-
-複製編輯
-
-`Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...`
+```http
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+```
 
 📌 **優點**
-
 - **無需存儲 Session，適合微服務架構**
 - **可攜帶用戶資訊（如 `user_id`）**
-- **支持 Token 失效時間（防止長期存取）** 📌 **缺點**
+- **支持 Token 失效時間（防止長期存取）** 
+
+📌 **缺點**
 - Token **無法撤銷**（需設定過期時間）
 
 ---
@@ -136,15 +127,14 @@ http
 
 📌 **使用方式**
 
-http
-
-複製編輯
-
-`Set-Cookie: sessionId=abcdef123456;`
+```http
+Set-Cookie: sessionId=abcdef123456;
+```
 
 📌 **優點**
-
-- 適用於 **瀏覽器登入** 📌 **缺點**
+- 適用於 **瀏覽器登入** 
+  
+📌 **缺點**
 - 需要 **Session 存儲（有負擔）**
 - 需 **防範 CSRF 攻擊**
 
@@ -164,11 +154,11 @@ http
 
 ## **📌 總結**
 
-1️⃣ **內部 API** → 使用 `API Key`  
-2️⃣ **測試 API** → `Basic Auth`（不建議）  
-3️⃣ **第三方授權（Google/Facebook 登入）** → `OAuth 2.0`（推薦）  
-4️⃣ **Web / Mobile API 登入** → `JWT`（推薦）  
-5️⃣ **Web 應用登入（Session 方式）** → `Session Token`
+1. **內部 API** → 使用 `API Key`  
+2. **測試 API** → `Basic Auth`（不建議）  
+3. **第三方授權（Google/Facebook 登入）** → `OAuth 2.0`（推薦）  
+4. **Web / Mobile API 登入** → `JWT`（推薦）  
+5. **Web 應用登入（Session 方式）** → `Session Token`
 
 ---
 

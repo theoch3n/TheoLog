@@ -27,11 +27,19 @@
 
 ### **🔹 範例**
 
-csharp
-
-複製編輯
-
-`using System; using System.Linq; using Microsoft.EntityFrameworkCore;  class Program {     static void Main() {         using (var db = new AppDbContext()) {             IQueryable<User> query = db.Users.Where(u => u.Age > 18); // SQL 尚未執行             var users = query.ToList(); // SQL 執行，結果載入記憶體         }     } }`
+```csharp
+using System;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
+class Program {
+	static void Main() {
+		using (var db = new AppDbContext()) {
+			IQueryable<User> query = db.Users.Where(u => u.Age > 18); // SQL 未執行
+			var users = query.ToList(); // SQL 執行，結果載入記憶體
+		}
+	}
+}
+```
 
 ### **📌 `IQueryable` 的優勢**
 
@@ -41,11 +49,9 @@ csharp
 
 🔹 **產生的 SQL**
 
-sql
-
-複製編輯
-
-`SELECT * FROM Users WHERE Age > 18;`
+```sql
+SELECT * FROM Users WHERE Age > 18;
+```
 
 ---
 
@@ -55,11 +61,10 @@ sql
 
 ### **🔹 範例**
 
-csharp
-
-複製編輯
-
-`IEnumerable<User> users = db.Users.ToList(); // SQL 立即執行 var filteredUsers = users.Where(u => u.Age > 18); // 在 C# 層面篩選`
+```csharp
+IEnumerable<User> users = db.Users.ToList(); // SQL 立即執行
+var filteredUsers = users.Where(u => u.Age > 18); // 在 C# 層面篩選
+```
 
 ### **📌 `IEnumerable` 的劣勢**
 
@@ -69,11 +74,9 @@ csharp
 
 🔹 **產生的 SQL**
 
-sql
-
-複製編輯
-
-`SELECT * FROM Users; -- 載入所有資料`
+```sql
+SELECT * FROM Users; -- 載入所有資料
+```
 
 📌 **篩選條件 (`.Where()`) 在 C# 層面執行，SQL 沒有過濾，造成效能問題！**
 
@@ -85,11 +88,12 @@ sql
 
 ### **🔹 `ToList()` 影響查詢方式**
 
-csharp
-
-複製編輯
-
-`// IQueryable（SQL 執行前） var query = db.Users.Where(u => u.Age > 18);  // SQL 會在此時執行 var usersList = query.ToList();` 
+```csharp
+// IQueryable（SQL 執行前） 
+var query = db.Users.Where(u => u.Age > 18);  
+// SQL 會在此時執行 
+var usersList = query.ToList();
+```
 
 📌 **`ToList()` 會觸發 SQL 查詢，並將結果載入記憶體。**
 
@@ -97,7 +101,7 @@ csharp
 
 ## **📍 5. `IQueryable` vs `IEnumerable` vs `ToList()`**
 
-||**IQueryable**|**IEnumerable**|**ToList()**|
+| |**IQueryable**|**IEnumerable**|**ToList()**|
 |---|---|---|---|
 |**運行位置**|**SQL Server（Server-Side）**|**記憶體（Client-Side）**|**記憶體（Client-Side）**|
 |**查詢方式**|**延遲執行（Lazy）**|**立即執行（Immediate）**|**強制執行 SQL 查詢**|
@@ -106,11 +110,11 @@ csharp
 
 ---
 
-## **📌 總結**
+## **💡 總結**
 
-1️⃣ **`IQueryable` 讓查詢在 SQL Server 執行，減少記憶體使用，適合大數據查詢。**  
-2️⃣ **`IEnumerable` 會將所有數據載入記憶體，適合小型集合，不適用於 SQL 查詢。**  
-3️⃣ **`ToList()` 會立即執行查詢，將 `IQueryable` 轉換成 `List<T>`，適合獲取最終結果。**
+1. **`IQueryable` 讓查詢在 SQL Server 執行，減少記憶體使用，適合大數據查詢。**  
+2. **`IEnumerable` 會將所有數據載入記憶體，適合小型集合，不適用於 SQL 查詢。**  
+3. **`ToList()` 會立即執行查詢，將 `IQueryable` 轉換成 `List<T>`，適合獲取最終結果。**
 
 ---
 
