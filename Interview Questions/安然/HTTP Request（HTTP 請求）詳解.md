@@ -1,4 +1,4 @@
-#### 📅 **Date**: 2025-03-12
+#### 📅 **Date**: 2025-03-13
 
 #### 🔖 **Tags**: #Basic #BackEnd #InterviewQuestions
 
@@ -50,15 +50,15 @@ Authorization: Bearer token123
 
 ## **📍 3. 常見的 HTTP Request 方法**
 
-|**方法**|**用途**|**是否有 Request Body**|
-|---|---|---|
-|`GET`|取得資源（Read）|❌ 無|
-|`POST`|**新增** 資源（Create）|✅ 有|
-|`PUT`|**更新** 整個資源（Update）|✅ 有|
-|`PATCH`|**部分更新** 資源（Partial Update）|✅ 有|
-|`DELETE`|刪除資源（Delete）|❌ 無|
-|`HEAD`|只獲取 Header，不返回 Body|❌ 無|
-|`OPTIONS`|查詢可用的 HTTP 方法|❌ 無|
+| **方法**    | **用途**                      | **是否有 Request Body** |
+| --------- | --------------------------- | -------------------- |
+| `GET`     | 取得資源（Read）                  | ❌ 無                  |
+| `POST`    | **新增** 資源（Create）           | ✅ 有                  |
+| `PUT`     | **更新** 整個資源（Update）         | ✅ 有                  |
+| `PATCH`   | **部分更新** 資源（Partial Update） | ✅ 有                  |
+| `DELETE`  | 刪除資源（Delete）                | ❌ 無                  |
+| `HEAD`    | 只獲取 Header，不返回 Body         | ❌ 無                  |
+| `OPTIONS` | 查詢可用的 HTTP 方法               | ❌ 無                  |
 
 ---
 
@@ -68,14 +68,14 @@ HTTP Headers **攜帶請求的額外資訊**，例如身份驗證、內容類型
 
 ### **✅ 常見 Headers**
 
-|**Header**|**用途**|**範例值**|
-|---|---|---|
-|`Authorization`|API 授權|`Bearer token123`|
-|`Content-Type`|請求的數據格式|`application/json`|
-|`Accept`|客戶端期望的回應格式|`application/json`|
-|`User-Agent`|瀏覽器或應用標識|`Mozilla/5.0`|
-|`Cache-Control`|設定快取策略|`no-cache`|
-|`Origin`|CORS 跨域請求來源|`https://example.com`|
+| **Header**      | **用途**      | **範例值**               |
+| --------------- | ----------- | --------------------- |
+| `Authorization` | API 授權      | `Bearer token123`     |
+| `Content-Type`  | 請求的數據格式     | `application/json`    |
+| `Accept`        | 客戶端期望的回應格式  | `application/json`    |
+| `User-Agent`    | 瀏覽器或應用標識    | `Mozilla/5.0`         |
+| `Cache-Control` | 設定快取策略      | `no-cache`            |
+| `Origin`        | CORS 跨域請求來源 | `https://example.com` |
 
 ---
 
@@ -148,7 +148,6 @@ app.Run();
 ```
 
 📌 **效果**
-
 - `AllowAnyOrigin()` → 允許所有來源（可改為 `WithOrigins("https://example.com")`）
 - `AllowAnyMethod()` → 允許所有 HTTP 方法（`GET`、`POST` 等）
 - `AllowAnyHeader()` → 允許任何 `Headers`
@@ -212,7 +211,6 @@ function handleData(data) {
 ```
 
 📌 **效果**
-
 - `JSONP` 透過 `<script>` 標籤載入外部 JSON
 - 伺服器需要返回 `callback(handleData)` 格式的 JSON
 - **缺點**：僅支援 `GET`，不安全，**現代應用不推薦使用**
@@ -224,7 +222,6 @@ function handleData(data) {
 ### **✅ Q4: HTTP `GET` vs `POST`，何時該用哪一種？**
 
 ✅ **回答**：
-
 - **`GET`** 用於**讀取數據**（不可修改資料）
 - **`POST`** 用於**提交數據**（如表單、JSON）
 - **`GET` 可快取（Cache），`POST` 不可快取**
@@ -235,23 +232,23 @@ function handleData(data) {
 ### **✅ Q5: HTTP `PUT` vs `PATCH`，有什麼不同？**
 
 ✅ **回答**：
-
 - **`PUT`** → **更新整個資源**，如果欄位缺失，可能會被覆蓋
 - **`PATCH`** → **只更新部分欄位**，不影響其他數據 📌 **範例**
 
-http
-
-複製編輯
-
-`PUT /api/users/1 {     "name": "Alice",     "age": 26 }` 
+```http
+PUT /api/users/1 {     
+	"name": "Alice",
+	"age": 26
+}
+```
 
 📌 **更新整個 `User`，缺少的欄位可能會被刪除**
 
-http
-
-複製編輯
-
-`PATCH /api/users/1 {     "age": 26 }`
+```http
+PATCH /api/users/1 {     
+	"age": 26
+}
+```
 
 📌 **僅更新 `age` 欄位，不影響其他數據**
 
@@ -260,31 +257,30 @@ http
 ### **✅ Q6: HTTP `OPTIONS` 方法的用途是什麼？**
 
 ✅ **回答**：
-
 - **`OPTIONS`** 用於查詢 API **允許的請求方法與 Headers**
 - 常用於 **CORS 預檢請求（Preflight Request）**
 - 伺服器應返回：
 
-http
-
-複製編輯
-
-`HTTP/1.1 204 No Content Access-Control-Allow-Methods: GET, POST, OPTIONS Access-Control-Allow-Headers: Authorization, Content-Type`
+```http
+HTTP/1.1 204 No Content
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+Access-Control-Allow-Headers: Authorization, Content-Type
+```
 
 ---
 
-## **📌 總結**
+## **💡 總結**
 
-1️⃣ **HTTP Request 包含 `Method`、`URL`、`Headers`、`Body`**  
-2️⃣ **常見 HTTP 方法：`GET`（讀取）、`POST`（新增）、`PUT`（更新）、`DELETE`（刪除）**  
-3️⃣ **CORS 是跨域安全機制，可透過 `Access-Control-Allow-Origin` 允許跨域請求**  
-4️⃣ **可透過後端 `CORS` 設定、前端 `mode: 'cors'`、Nginx 來解決跨域問題**
+1. **HTTP Request 包含 `Method`、`URL`、`Headers`、`Body`**  
+2. **常見 HTTP 方法：`GET`（讀取）、`POST`（新增）、`PUT`（更新）、`DELETE`（刪除）**  
+3. **CORS 是跨域安全機制，可透過 `Access-Control-Allow-Origin` 允許跨域請求**  
+4. **可透過後端 `CORS` 設定、前端 `mode: 'cors'`、Nginx 來解決跨域問題**
 
 ---
 
 🔥 **面試技巧** 如果面試官問：「如何解決 CORS 問題？」  
 ✅ **回答**： 
-1️⃣ **伺服器設定 `Access-Control-Allow-Origin`，允許特定域名請求**  
-2️⃣ **設定 `Access-Control-Allow-Methods`，允許 `GET, POST, OPTIONS` 方法**  
-3️⃣ **在 ASP.NET Core 內建 CORS 設定 `AllowAnyOrigin()`**  
-4️⃣ **如果 API 不支援 CORS，可考慮 JSONP（僅適用 GET）**
+1. **伺服器設定 `Access-Control-Allow-Origin`，允許特定域名請求**  
+2. **設定 `Access-Control-Allow-Methods`，允許 `GET, POST, OPTIONS` 方法**  
+3. **在 ASP.NET Core 內建 CORS 設定 `AllowAnyOrigin()`**  
+4. **如果 API 不支援 CORS，可考慮 JSONP（僅適用 GET）**
