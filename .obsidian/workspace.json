@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "759948d025a52bfb",
+        "id": "6ce4588f30c530cd",
         "type": "tabs",
         "children": [
           {
-            "id": "2472bc96d02edad0",
+            "id": "708c1d5b34ff689a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Interview Questions/安然/HTTP Request（HTTP 請求）詳解.md",
+                "file": "Interview Questions/哲煜/OAuth 1 vs OAuth 2 差異.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "HTTP Request（HTTP 請求）詳解"
+              "title": "OAuth 1 vs OAuth 2 差異"
             }
           }
         ]
@@ -140,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Interview Questions/安然/HTTP Request（HTTP 請求）詳解.md",
+                "file": "Interview Questions/哲煜/OAuth 1 vs OAuth 2 差異.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "HTTP Request（HTTP 請求）詳解 的大綱"
+              "title": "OAuth 1 vs OAuth 2 差異 的大綱"
             }
           },
           {
@@ -160,7 +160,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -178,10 +178,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "2472bc96d02edad0",
+  "active": "708c1d5b34ff689a",
   "lastOpenFiles": [
-    "Template/Template/Interview Questions Template.md",
     "Interview Questions/安然/HTTP Request（HTTP 請求）詳解.md",
+    "Interview Questions/安然/迴圈.md",
+    "Interview Questions/安然/說明 OOP 物件導向.md",
+    "Template/Template/Interview Questions Template.md",
     "Interview Questions/哲煜/(未完成)IQueryable vs IEnumerable vs ToList() 的運作原理.md",
     "Template/Template.md",
     "Interview Questions/哲煜/(未完成)什麼是 MVVM（Model-View-ViewModel）？.md",
@@ -199,8 +201,6 @@
     "Interview Questions/哲煜/(未完成)批次處理（Batch Processing）.md",
     "Interview Questions/哲煜/(未完成)資料庫的多對多關係（Many-to-Many Relationship）.md",
     "Interview Questions/安然/MVC是什麼.md",
-    "Interview Questions/安然/說明 OOP 物件導向.md",
-    "Interview Questions/安然/迴圈.md",
     "Interview Questions/易可思/河內塔遞迴.md",
     "Interview Questions/易可思/輸入網址後，網頁渲染的完整流程.md",
     "Interview Questions/易可思/說明 悲觀鎖 & 樂觀鎖.md",
