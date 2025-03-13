@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Interview Questions/易可思/說明 悲觀鎖 & 樂觀鎖.md",
+                "file": "Interview Questions/易可思/輸入網址後，網頁渲染的完整流程.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "說明 悲觀鎖 & 樂觀鎖"
+              "title": "輸入網址後，網頁渲染的完整流程"
             }
           }
         ]
@@ -140,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Interview Questions/易可思/說明 悲觀鎖 & 樂觀鎖.md",
+                "file": "Interview Questions/易可思/輸入網址後，網頁渲染的完整流程.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "說明 悲觀鎖 & 樂觀鎖 的大綱"
+              "title": "輸入網址後，網頁渲染的完整流程 的大綱"
             }
           },
           {
@@ -179,13 +179,14 @@
   },
   "active": "bd284160d4b5dd48",
   "lastOpenFiles": [
+    "Template/Template/Interview Questions Template.md",
+    "Interview Questions/易可思/輸入網址後，網頁渲染的完整流程.md",
+    "Interview Questions/哲煜",
+    "Interview Questions/易可思/說明 悲觀鎖 & 樂觀鎖.md",
     "Interview Questions/安然/MVC是什麼.md",
     "Interview Questions/安然/說明 OOP 物件導向.md",
     "Interview Questions/安然/迴圈.md",
-    "Interview Questions/易可思/說明 悲觀鎖 & 樂觀鎖.md",
-    "Interview Questions/易可思/輸入網址後，網頁渲染的完整流程.md",
     "Interview Questions/易可思/河內塔遞迴.md",
-    "Template/Template/Interview Questions Template.md",
     "Template/Template.md",
     "Template/Template/Bug Report Template.md",
     "Bug Report/Fixed/修復 Bootstrap Modal 切換 Router 後的樣式殘留 (灰色遮罩) 問題.md",
@@ -213,7 +214,6 @@
     "Bug Report/Fixed",
     "2025-02-20.md",
     "Dev Diary/2025/FEB",
-    "Bug Report",
     "歡迎.md"
   ]
 }
