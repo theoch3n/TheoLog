@@ -1,4 +1,4 @@
-#### 📅 **Date**: 2025-03-13
+#### 📅 **Date**: 2025-03-14
 
 #### 🔖 **Tags**: #SQL #BackEnd #InterviewQuestions
 
@@ -22,18 +22,18 @@
 
 > **「一個學生可以選修多門課程，一門課程可以有多個學生」**
 
-|**學生表（Students）**||**課程表（Courses）**|
+|**學生表（Students）**| |**課程表（Courses）**|
 |---|---|---|
 |`id`（PK）|🔗|`id`（PK）|
 |`name`||`title`|
 
 📌 **解決方案**：建立**中介表（student_course）**
 
-|**中介表（student_course）**||
-|---|---|
-|`student_id`（FK）|🔗 `students.id`|
-|`course_id`（FK）|🔗 `courses.id`|
-|**PK（主鍵）**|`(student_id, course_id)`|
+| **中介表（student_course）** |                           |
+| ----------------------- | ------------------------- |
+| `student_id`（FK）        | 🔗 `students.id`          |
+| `course_id`（FK）         | 🔗 `courses.id`           |
+| **PK（主鍵）**              | `(student_id, course_id)` |
 
 ---
 
@@ -41,14 +41,28 @@
 
 ### **✅ 建立表格**
 
-sql
-
-複製編輯
-
-`-- 建立學生表 CREATE TABLE students (     id INT PRIMARY KEY AUTO_INCREMENT,     name VARCHAR(50) NOT NULL );  -- 建立課程表 CREATE TABLE courses (     id INT PRIMARY KEY AUTO_INCREMENT,     title VARCHAR(100) NOT NULL );  -- 建立中介表（關聯學生與課程） CREATE TABLE student_course (     student_id INT,     course_id INT,     PRIMARY KEY (student_id, course_id),     FOREIGN KEY (student_id) REFERENCES students(id) ON DELETE CASCADE,     FOREIGN KEY (course_id) REFERENCES courses(id) ON DELETE CASCADE );`
+```sql
+-- 建立學生表 
+CREATE TABLE students (     
+	id INT PRIMARY KEY AUTO_INCREMENT,     
+	name VARCHAR(50) NOT NULL 
+);  
+-- 建立課程表 
+CREATE TABLE courses (     
+	id INT PRIMARY KEY AUTO_INCREMENT,     
+	title VARCHAR(100) NOT NULL 
+);  
+-- 建立中介表（關聯學生與課程） 
+CREATE TABLE student_course (     
+	student_id INT,     
+	course_id INT,     
+	PRIMARY KEY (student_id, course_id),     
+	FOREIGN KEY (student_id) REFERENCES students(id) ON DELETE CASCADE,     
+	FOREIGN KEY (course_id) REFERENCES courses(id) ON DELETE CASCADE 
+);
+```
 
 📌 **關鍵設計**
-
 - **`PRIMARY KEY (student_id, course_id)`**：確保不會有重複記錄
 - **`FOREIGN KEY` 約束**：確保 `student_id` & `course_id` 參考正確的表
 - **`ON DELETE CASCADE`**：當 `students` 或 `courses` 中的記錄刪除時，自動刪除中介表的對應記錄
