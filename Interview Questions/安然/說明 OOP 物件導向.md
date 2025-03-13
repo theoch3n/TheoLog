@@ -12,12 +12,12 @@ OOP（**Object-Oriented Programming**）是一種**程式設計範式**，透過
 
 OOP 有 **四大核心特性**，這也是面試常考的重點：
 
-|特性|說明|例子|
-|---|---|---|
-|**封裝（Encapsulation）**|將數據與行為封裝在物件內部，外部無法直接存取|`private`、`public`、`getter/setter`|
-|**繼承（Inheritance）**|子類別（Subclass）可以繼承父類別（Superclass）的屬性與方法|`class Car : Vehicle {}`|
-|**多型（Polymorphism）**|同一個方法可在不同類別中有不同實作|方法重載（Overloading）與方法覆寫（Overriding）|
-|**抽象（Abstraction）**|隱藏不必要的細節，只對外暴露必要的功能|`abstract class`、`interface`|
+| 特性                    | 說明                                     | 例子                                 |
+| --------------------- | -------------------------------------- | ---------------------------------- |
+| **封裝（Encapsulation）** | 將數據與行為封裝在物件內部，外部無法直接存取                 | `private`、`public`、`getter/setter` |
+| **繼承（Inheritance）**   | 子類別（Subclass）可以繼承父類別（Superclass）的屬性與方法 | `class Car : Vehicle {}`           |
+| **多型（Polymorphism）**  | 同一個方法可在不同類別中有不同實作                      | 方法重載（Overloading）與方法覆寫（Overriding） |
+| **抽象（Abstraction）**   | 隱藏不必要的細節，只對外暴露必要的功能                    | `abstract class`、`interface`       |
 
 ---
 
