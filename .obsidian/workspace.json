@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Interview Questions/安然/MVC是什麼.md",
+                "file": "Interview Questions/易可思/說明 悲觀鎖 & 樂觀鎖.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "MVC是什麼"
+              "title": "說明 悲觀鎖 & 樂觀鎖"
             }
           }
         ]
@@ -140,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Interview Questions/安然/MVC是什麼.md",
+                "file": "Interview Questions/易可思/說明 悲觀鎖 & 樂觀鎖.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "MVC是什麼 的大綱"
+              "title": "說明 悲觀鎖 & 樂觀鎖 的大綱"
             }
           },
           {
@@ -160,7 +160,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -179,9 +179,9 @@
   },
   "active": "bd284160d4b5dd48",
   "lastOpenFiles": [
+    "Interview Questions/安然/MVC是什麼.md",
     "Interview Questions/安然/說明 OOP 物件導向.md",
     "Interview Questions/安然/迴圈.md",
-    "Interview Questions/安然/MVC是什麼.md",
     "Interview Questions/易可思/說明 悲觀鎖 & 樂觀鎖.md",
     "Interview Questions/易可思/輸入網址後，網頁渲染的完整流程.md",
     "Interview Questions/易可思/河內塔遞迴.md",
