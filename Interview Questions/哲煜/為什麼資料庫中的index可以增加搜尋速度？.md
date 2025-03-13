@@ -1,4 +1,4 @@
-#### 📅 **Date**: 2025-03-12
+#### 📅 **Date**: 2025-03-13
 
 #### 🔖 **Tags**: #SQL #InterviewQuestions
 
@@ -51,9 +51,9 @@ SELECT * FROM Customers WHERE Name = 'John';
 3. **直接讀取所需的行**（不需逐行掃描）
 
 👉 **優勢**： 
-**時間複雜度降為 `O(log n)`**（B-Tree 查找）  
-**避免全表掃描，提高查詢效能**  
-✅ **更適合大數據量查詢（如百萬筆資料）**
+- **時間複雜度降為 `O(log n)`**（B-Tree 查找）  
+- **避免全表掃描，提高查詢效能**  
+- **更適合大數據量查詢（如百萬筆資料）**
 
 ---
 
@@ -69,11 +69,19 @@ SELECT * FROM Customers WHERE Name = 'John';
 
 🔹 **B-Tree 索引查找過程**
 
-mathematica
+```mathematica
+索引結構：
+          M        
+        /   \
+       C     T    
+      / \   / \ 
+	 A   F P   Z 
 
-複製編輯
-
-`索引結構：          M        /   \       C     T      / \   / \     A   F P   Z  查找 "P"： 1️⃣ 從根節點 "M" 開始 2️⃣ "P" > "M"，往右子樹走 3️⃣ 在 "T" 節點找到 "P"`
+查找 "P"： 
+	1. 從根節點 "M" 開始 
+	2. "P" > "M"，往右子樹走 
+	3. 在 "T" 節點找到 "P"
+```
 
 **查詢時間**：`O(log n)`
 
@@ -101,24 +109,22 @@ mathematica
 
 ### **❌ 當索引無法使用時**
 
-1️⃣ **`LIKE '%keyword'` 會失效**
+1. **`LIKE '%keyword'` 會失效**
 
-sql
-
-複製編輯
-
-`SELECT * FROM Products WHERE Name LIKE '%Apple';`
+```sql
+SELECT * FROM Products WHERE Name LIKE '%Apple';
+```
 
 - **原因**：索引是**從左到右排序**，前面有 `%` 時無法使用索引
 - **解決方案**：使用 **全文索引（Full-Text Index）**
 
-2️⃣ **小數據量時，索引反而影響效能**
+2. **小數據量時，索引反而影響效能**
 
-- **如果表格只有幾百筆資料，使用索引可能會比全表掃描更慢**，因為資料庫還需要先讀取索引。
+	- **如果表格只有幾百筆資料，使用索引可能會比全表掃描更慢**，因為資料庫還需要先讀取索引。
 
-3️⃣ **索引過多，影響 `INSERT`、`UPDATE` 效能**
+3. **索引過多，影響 `INSERT`、`UPDATE` 效能**
 
-- 當有大量索引時，每次新增/修改資料都需要維護索引，可能降低寫入效能。
+	- 當有大量索引時，每次新增/修改資料都需要維護索引，可能降低寫入效能。
 
 ---
 
@@ -128,22 +134,18 @@ sql
 
 讓索引直接**包含查詢的所有欄位**，避免回表（Lookup）。
 
-sql
-
-複製編輯
-
-`CREATE INDEX idx_user ON Users (Name, Age);`
+```sql
+CREATE INDEX idx_user ON Users (Name, Age);
+```
 
 這樣：
 
-sql
+```sql
+SELECT Name, Age FROM Users WHERE Name = 'John';
+```
 
-複製編輯
-
-`SELECT Name, Age FROM Users WHERE Name = 'John';`
-
-✅ **可以直接從索引獲取資料，不需回原始表格**  
-✅ **提升查詢效能**
+- **可以直接從索引獲取資料，不需回原始表格**  
+- **提升查詢效能**
 
 ---
 
@@ -151,19 +153,15 @@ sql
 
 如果經常用 **多個欄位** 查詢，如：
 
-sql
-
-複製編輯
-
-`SELECT * FROM Orders WHERE CustomerID = 5 AND OrderDate = '2024-03-12';`
+```sql
+SELECT * FROM Orders WHERE CustomerID = 5 AND OrderDate = '2024-03-12';
+```
 
 可以建立：
 
-sql
-
-複製編輯
-
-`CREATE INDEX idx_orders ON Orders (CustomerID, OrderDate);`
+```sql
+CREATE INDEX idx_orders ON Orders (CustomerID, OrderDate);
+```
 
 ✅ **加快篩選條件組合查詢**
 
@@ -173,32 +171,29 @@ sql
 
 ❌ 錯誤：
 
-sql
-
-複製編輯
-
-`SELECT * FROM Products WHERE price + 10 = 100;`
+```sql
+SELECT * FROM Products WHERE price + 10 = 100;
+```
 
 ✅ 正確：
 
-sql
-
-複製編輯
-
-`SELECT * FROM Products WHERE price = 90;`
+```sql
+SELECT * FROM Products WHERE price = 90;
+```
 
 ✔ **索引欄位不能進行計算，否則會導致索引失效！**
 
 ---
 
-## **📌 總結**
+## **💡 總結**
 
-1️⃣ **索引是「資料表的目錄」，加快查詢速度**，避免全表掃描。  
-2️⃣ **使用 B-Tree 讓查詢從 `O(n)` 降到 `O(log n)`**，提升效能。  
-3️⃣ **Hash 索引速度更快 (`O(1)`)，但不支援範圍查詢。**  
-4️⃣ **索引過多會影響 `INSERT`、`UPDATE`**，需權衡效能。  
-5️⃣ **避免索引失效（避免函數計算、LIKE `%keyword`）**，可使用**全文索引（Full-Text Index）**。
+1. **索引是「資料表的目錄」，加快查詢速度**，避免全表掃描。  
+2. **使用 B-Tree 讓查詢從 `O(n)` 降到 `O(log n)`**，提升效能。  
+3. **Hash 索引速度更快 (`O(1)`)，但不支援範圍查詢。**  
+4. **索引過多會影響 `INSERT`、`UPDATE`**，需權衡效能。  
+5. **避免索引失效（避免函數計算、LIKE `%keyword`）**，可使用**全文索引（Full-Text Index）**。
 
 ---
 
-🔥 **面試技巧**： 如果面試官問 **「為什麼索引能加速查詢？」** ✅ **回答**：「因為索引使用 **B-Tree** 結構來組織數據，使查找時間從 `O(n)` 降為 `O(log n)`，可以快速找到符合條件的記錄，而不需要全表掃描。」
+🔥 **面試技巧**： 如果面試官問 **「為什麼索引能加速查詢？」** 
+✅ **回答**：「因為索引使用 **B-Tree** 結構來組織數據，使查找時間從 `O(n)` 降為 `O(log n)`，可以快速找到符合條件的記錄，而不需要全表掃描。」
