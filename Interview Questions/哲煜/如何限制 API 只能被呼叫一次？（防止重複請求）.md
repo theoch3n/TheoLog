@@ -19,22 +19,29 @@
 
 ### **🔹 API 設計**
 
-http
-
-複製編輯
-
-`POST /api/orders Authorization: Bearer token123 Idempotency-Key: abc123xyz`
+```http
+POST /api/orders 
+Authorization: Bearer token123 
+Idempotency-Key: abc123xyz
+```
 
 ### **🔹 後端實作（C# .NET / Redis）**
 
-csharp
-
-複製編輯
-
-`public async Task<IActionResult> CreateOrder([FromBody] OrderRequest request, [FromHeader] string idempotencyKey) {     var cacheKey = $"idempotency:{idempotencyKey}";      // 檢查 Redis 是否已經處理過這個請求     if (await _redis.ExistsAsync(cacheKey))         return Conflict("此請求已經處理，請勿重複提交");      // 標記請求已處理（設定有效期限，例如 10 分鐘）     await _redis.SetAsync(cacheKey, "processed", TimeSpan.FromMinutes(10));      // 執行實際業務邏輯     var order = _orderService.CreateOrder(request);     return Ok(order); }`
+```csharp
+public async Task<IActionResult> CreateOrder([FromBody] OrderRequest request, [FromHeader] string idempotencyKey) {     
+	var cacheKey = $"idempotency:{idempotencyKey}";      
+	// 檢查 Redis 是否已經處理過這個請求     
+	if (await _redis.ExistsAsync(cacheKey))         
+		return Conflict("此請求已經處理，請勿重複提交");      
+	// 標記請求已處理（設定有效期限，例如 10 分鐘）     
+	await _redis.SetAsync(cacheKey, "processed", TimeSpan.FromMinutes(10));
+	// 執行實際業務邏輯     
+	var order = _orderService.CreateOrder(request);     
+	return Ok(order); 
+}
+```
 
 📌 **優勢**
-
 - **適合付款、訂單等業務場景**
 - **防止使用者誤觸按鈕造成重複提交**
 
@@ -51,14 +58,18 @@ csharp
 
 ### **🔹 後端實作（C# .NET / Redis）**
 
-csharp
-
-複製編輯
-
-`public async Task<IActionResult> ProcessRequest(string userId) {     string requestKey = $"api_request:{userId}";      // 檢查 Redis 是否已存在該請求     if (await _redis.ExistsAsync(requestKey))         return Conflict("請求已處理，請勿重複請求");      // 記錄請求，設置 TTL 60 秒     await _redis.SetAsync(requestKey, "1", TimeSpan.FromSeconds(60));      return Ok("請求成功！"); }`
+```csharp
+public async Task<IActionResult> ProcessRequest(string userId) {     
+	string requestKey = $"api_request:{userId}";      
+	// 檢查 Redis 是否已存在該請求     
+	if (await _redis.ExistsAsync(requestKey))         
+		return Conflict("請求已處理，請勿重複請求");      
+	// 記錄請求，設置 TTL 60 秒     
+	await _redis.SetAsync(requestKey, "1", TimeSpan.FromSeconds(60));      
+	return Ok("請求成功！"); }
+```
 
 📌 **優勢**
-
 - **適合 API Rate Limiting，防止多次請求**
 - **使用 Redis，效能高、不影響資料庫負擔**
 
@@ -75,22 +86,35 @@ csharp
 
 ### **🔹 SQL 設計**
 
-sql
-
-複製編輯
-
-`CREATE TABLE orders (     id SERIAL PRIMARY KEY,     user_id INT NOT NULL,     order_number VARCHAR(255) UNIQUE, -- 確保不重複     amount DECIMAL(10,2) );`
+```sql
+CREATE TABLE orders (     
+	id SERIAL PRIMARY KEY,     
+	user_id INT NOT NULL,     
+	order_number VARCHAR(255) UNIQUE, -- 確保不重複     
+	amount DECIMAL(10,2) 
+);
+```
 
 ### **🔹 C# 後端處理**
 
-csharp
-
-複製編輯
-
-`public IActionResult CreateOrder(OrderRequest request) {     try     {         var order = new Order         {             OrderNumber = request.OrderNumber, // 由前端提供             UserId = request.UserId,             Amount = request.Amount         };          _db.Orders.Add(order);         _db.SaveChanges(); // 如果 OrderNumber 重複，會拋出錯誤         return Ok(order);     }     catch (DbUpdateException)     {         return Conflict("此訂單已存在，請勿重複提交！");     } }`
+```csharp
+public IActionResult CreateOrder(OrderRequest request) {     
+	try {
+		var order = new Order {
+			OrderNumber = request.OrderNumber, // 由前端提供             
+			UserId = request.UserId,             
+			Amount = request.Amount         
+		};          
+		_db.Orders.Add(order);         
+		_db.SaveChanges(); // 如果 OrderNumber 重複，會拋出錯誤         
+		return Ok(order);     
+	} catch (DbUpdateException) {         
+		return Conflict("此訂單已存在，請勿重複提交！");     
+	} 
+}
+```
 
 📌 **優勢**
-
 - **即使 API 並行請求，資料庫層面仍然保證唯一性**
 - **適合交易、付款等高安全性操作**
 
@@ -102,19 +126,20 @@ csharp
 
 ### **✅ 解決方案**
 
-1️⃣ **後端產生 Token，前端請求 API 時必須帶上 Token**  
-2️⃣ **請求後立即作廢，不可重複使用**
+1. **後端產生 Token，前端請求 API 時必須帶上 Token**  
+2. **請求後立即作廢，不可重複使用**
 
 ### **🔹 C# 後端實作**
 
-csharp
-
-複製編輯
-
-`public IActionResult VerifyOnce(string token) {     if (_redis.Exists($"one_time_token:{token}"))         return Conflict("Token 已使用，請勿重複請求");      _redis.Set($"one_time_token:{token}", "used", TimeSpan.FromMinutes(5));      return Ok("驗證成功！"); }`
+```csharp
+public IActionResult VerifyOnce(string token) {     
+	if (_redis.Exists($"one_time_token:{token}"))         
+		return Conflict("Token 已使用，請勿重複請求");
+	_redis.Set($"one_time_token:{token}", "used", TimeSpan.FromMinutes(5));
+	return Ok("驗證成功！"); }
+```
 
 📌 **優勢**
-
 - **適合一次性授權請求**
 - **防止惡意重複提交**
 

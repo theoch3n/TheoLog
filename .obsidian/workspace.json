@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Interview Questions/哲煜/(未完成)如何限制 API 只能被呼叫一次？（防止重複請求）.md",
+                "file": "Interview Questions/哲煜/如何限制 API 只能被呼叫一次？（防止重複請求）.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "(未完成)如何限制 API 只能被呼叫一次？（防止重複請求）"
+              "title": "如何限制 API 只能被呼叫一次？（防止重複請求）"
             }
           }
         ]
@@ -140,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Interview Questions/哲煜/(未完成)如何限制 API 只能被呼叫一次？（防止重複請求）.md",
+                "file": "Interview Questions/哲煜/如何限制 API 只能被呼叫一次？（防止重複請求）.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "(未完成)如何限制 API 只能被呼叫一次？（防止重複請求） 的大綱"
+              "title": "如何限制 API 只能被呼叫一次？（防止重複請求） 的大綱"
             }
           },
           {
@@ -164,8 +164,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -198,7 +197,7 @@
     "Bug Report/Fixed/修復 Bootstrap Modal 切換 Router 後的樣式殘留 (灰色遮罩) 問題.md",
     "Template/Template/Interview Questions Template.md",
     "Template/Template.md",
-    "Interview Questions/哲煜/(未完成)如何限制 API 只能被呼叫一次？（防止重複請求）.md",
+    "Interview Questions/哲煜/如何限制 API 只能被呼叫一次？（防止重複請求）.md",
     "Interview Questions/哲煜/(未完成)Vue.js 的生命週期（Lifecycle）.md",
     "Interview Questions/哲煜/(未完成)Vue 響應式背後的原理 & 使用純 JavaScript 如何實作？.md",
     "Interview Questions/哲煜/(未完成)如何處理查詢大量數據導致 Timeout 問題？.md",
