@@ -73,69 +73,64 @@ CREATE TABLE student_course (
 
 ### **✅ 插入資料**
 
-sql
-
-複製編輯
-
-`-- 插入學生 INSERT INTO students (name) VALUES ('Alice'), ('Bob');  -- 插入課程 INSERT INTO courses (title) VALUES ('Math'), ('Science');  -- Alice 選修 Math（學生 ID = 1, 課程 ID = 1） INSERT INTO student_course (student_id, course_id) VALUES (1, 1);  -- Bob 選修 Math 和 Science（學生 ID = 2, 課程 ID = 1 & 2） INSERT INTO student_course (student_id, course_id) VALUES (2, 1), (2, 2);`
+```sql
+-- 插入學生 
+INSERT INTO students (name) VALUES ('Alice'), ('Bob');  
+-- 插入課程 
+INSERT INTO courses (title) VALUES ('Math'), ('Science');  
+-- Alice 選修 Math（學生 ID = 1, 課程 ID = 1） 
+INSERT INTO student_course (student_id, course_id) VALUES (1, 1);  
+-- Bob 選修 Math 和 Science（學生 ID = 2, 課程 ID = 1 & 2） 
+INSERT INTO student_course (student_id, course_id) VALUES (2, 1), (2, 2);
+```
 
 ---
 
 ### **✅ 查詢某學生選修的課程**
 
-sql
-
-複製編輯
-
-`SELECT s.name, c.title FROM students s JOIN student_course sc ON s.id = sc.student_id JOIN courses c ON sc.course_id = c.id WHERE s.id = 2;`
+```sql
+SELECT s.name, c.title FROM students s JOIN student_course sc ON s.id = sc.student_id JOIN courses c ON sc.course_id = c.id WHERE s.id = 2;
+```
 
 📌 **解釋**：
-
 1. **`JOIN student_course`** → 找到學生與課程的關聯
 2. **`JOIN courses`** → 取得對應的課程名稱
 
 **結果**
 
-javascript
-
-複製編輯
-
-`Bob | Math Bob | Science`
+```javascript
+Bob | Math Bob | Science
+```
 
 ---
 
 ### **✅ 查詢某課程的學生**
 
-sql
-
-複製編輯
-
-`SELECT c.title, s.name FROM courses c JOIN student_course sc ON c.id = sc.course_id JOIN students s ON sc.student_id = s.id WHERE c.id = 1;`
+```sql
+SELECT c.title, s.name FROM courses c 
+JOIN student_course sc ON c.id = sc.course_id 
+JOIN students s ON sc.student_id = s.id 
+WHERE c.id = 1;
+```
 
 📌 **解釋**：
-
 - 找出所有選修 `Math（id = 1）` 的學生
 
 **結果**
 
-javascript
-
-複製編輯
-
-`Math | Alice Math | Bob`
+```javascript
+Math | Alice Math | Bob
+```
 
 ---
 
 ### **✅ 刪除某學生時，同步刪除關聯**
 
-sql
-
-複製編輯
-
-`DELETE FROM students WHERE id = 1;`
+```sql
+DELETE FROM students WHERE id = 1;
+```
 
 📌 **結果**
-
 - `students.id = 1` 被刪除
 - **`student_course` 中相關的 `student_id = 1` 也會自動刪除（因為 `ON DELETE CASCADE`）**
 
@@ -149,20 +144,18 @@ sql
 
 📌 **為中介表加索引**
 
-sql
-
-複製編輯
-
-`CREATE INDEX idx_student_course_student ON student_course(student_id); CREATE INDEX idx_student_course_course ON student_course(course_id);`
+```sql
+CREATE INDEX idx_student_course_student ON student_course(student_id); 
+CREATE INDEX idx_student_course_course ON student_course(course_id);
+```
 
 🔹 **效果**
-
 - **加速 `WHERE student_id = ?` 的查詢**
 - **加速 `WHERE course_id = ?` 的查詢**
 
 ---
 
-## **📌 總結**
+## **💡 總結**
 
 |**重點**|**說明**|
 |---|---|

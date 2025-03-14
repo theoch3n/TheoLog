@@ -1,6 +1,6 @@
-#### 📅 **Date**: 2025-03-13
+#### 📅 **Date**: 2025-03-14
 
-#### 🔖 **Tags**: #MVC #DesignPattern #InterviewQuestions
+#### 🔖 **Tags**: #MVVM #DesignPattern #InterviewQuestions
 
 ---
 
@@ -27,21 +27,36 @@ MVVM 主要應用於 **WPF、Xamarin、Vue.js、Angular、React（MVP 類似概�
 
 ### **🔹 Model（數據層，負責存儲數據）**
 
-csharp
-
-複製編輯
-
-`public class UserModel {     public string Name { get; set; }     public int Age { get; set; } }`
+```csharp
+public class UserModel {     
+	public string Name { get; set; }     
+	public int Age { get; set; } 
+}
+```
 
 ---
 
 ### **🔹 ViewModel（邏輯層，負責處理 UI 綁定）**
 
-csharp
-
-複製編輯
-
-`using System.ComponentModel;  public class UserViewModel : INotifyPropertyChanged {     private UserModel _user;          public UserModel User     {         get => _user;         set         {             _user = value;             OnPropertyChanged("User");         }     }      public UserViewModel()     {         User = new UserModel { Name = "Alice", Age = 25 };     }      public event PropertyChangedEventHandler PropertyChanged;     protected void OnPropertyChanged(string propertyName)     {         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));     } }`
+```csharp
+using System.ComponentModel;  
+public class UserViewModel : INotifyPropertyChanged {     
+	private UserModel _user;          
+	public UserModel User {         
+		get => _user;         
+		set {             
+			_user = value;             
+			OnPropertyChanged("User");         
+		}     
+	}      
+	public UserViewModel() {         
+		User = new UserModel { Name = "Alice", Age = 25 };     
+	}      
+	public event PropertyChangedEventHandler PropertyChanged;     
+	protected void OnPropertyChanged(string propertyName) {         
+		PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));     } 
+}
+```
 
 📌 **`INotifyPropertyChanged` 可讓 View 自動更新 UI**  
 📌 **`OnPropertyChanged("User")` 讓數據變動時通知 View**
@@ -50,11 +65,17 @@ csharp
 
 ### **🔹 View（UI 層，負責顯示數據）**
 
-xml
-
-複製編輯
-
-`<Window x:Class="MainWindow"         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">     <Window.DataContext>         <local:UserViewModel/>     </Window.DataContext>      <Grid>         <TextBox Text="{Binding User.Name, UpdateSourceTrigger=PropertyChanged}" />         <TextBlock Text="{Binding User.Age}" />     </Grid> </Window>`
+```xml
+<Window x:Class="MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<Window.DataContext>         
+		<local:UserViewModel/>     
+	</Window.DataContext>      
+	<Grid>         
+		<TextBox Text="{Binding User.Name, UpdateSourceTrigger=PropertyChanged}" />
+		<TextBlock Text="{Binding User.Age}" />     
+	</Grid> 
+</Window>
+```
 
 📌 **`{Binding User.Name}`** → 讓 `TextBox` 與 `User.Name` 進行 **雙向綁定**  
 📌 **`UpdateSourceTrigger=PropertyChanged`** → 讓 UI 變動時，ViewModel 也同步更新
@@ -69,11 +90,11 @@ xml
 
 ---
 
-## **📌 總結**
+## **💡 總結**
 
-1️⃣ **Model**（數據層）→ 負責數據管理（資料庫、API）  
-2️⃣ **ViewModel**（邏輯層）→ **處理 UI 綁定，觸發 PropertyChanged**  
-3️⃣ **View**（視圖層）→ 負責 UI 顯示，透過 `Binding` 綁定 ViewModel
+1. **Model**（數據層）→ 負責數據管理（資料庫、API）  
+2. **ViewModel**（邏輯層）→ **處理 UI 綁定，觸發 PropertyChanged**  
+3. **View**（視圖層）→ 負責 UI 顯示，透過 `Binding` 綁定 ViewModel
 
 ---
 
