@@ -45,16 +45,26 @@ public class Person {
 
 ```csharp
 public class Animal {
-	public string Name { get; set; }
-	public void Speak() {
-		Console.WriteLine("Animal Sound");
-	}
+    public string Name { get; set; }
+    public void Speak() {
+        Console.WriteLine("Animal sound.");
+    }
 }
 
-public class Dog : Animal {  // Dog 繼承 Animal
-	public void Bark() {
-		Console.WriteLine("Woof! Woof!");
-	}
+public class Dog : Animal {
+    public void Bark() {
+        Console.WriteLine("Woof! Woof!");
+    }
+}
+
+class Program {
+    static void Main() {
+        Dog myDog = new Dog();
+        myDog.Name = "Buddy";  
+        Console.WriteLine(myDog.Name);  // 輸出：Buddy
+        myDog.Speak();  // 輸出：Animal makes a sound.
+        myDog.Bark();   // 輸出：Woof! Woof!
+    }
 }
 ```
 
