@@ -280,7 +280,7 @@ Access-Control-Allow-Headers: Authorization, Content-Type
 
 🔥 **面試技巧** 如果面試官問：「如何解決 CORS 問題？」  
 ✅ **回答**： 
-1. **伺服器設定 `Access-Control-Allow-Origin`，允許特定域名請求**  
+1. **伺服器設定 `Access-Control-Allow-Origin`，允許特定域名請求** 
 2. **設定 `Access-Control-Allow-Methods`，允許 `GET, POST, OPTIONS` 方法**  
 3. **在 ASP.NET Core 內建 CORS 設定 `AllowAnyOrigin()`**  
 4. **如果 API 不支援 CORS，可考慮 JSONP（僅適用 GET）**

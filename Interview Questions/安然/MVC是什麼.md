@@ -10,9 +10,9 @@ MVC（**Model-View-Controller**）是一種 **軟體架構設計模式**，主�
 
 ## **📍 MVC 架構概念**
 
-- **Model（模型）**：負責處理數據和商業邏輯。  
-- **View（視圖）**：負責顯示 UI，與使用者互動。  
-- **Controller（控制器）**：負責接收請求、調用 Model 並回傳 View。
+- **Model（模型）**：負責處理數據和商業邏輯，與資料庫或其他數據來源進行交互，並提供數據給 Controller 或 View。
+- **View（視圖）**：負責顯示 UI，呈現 Model 的數據，並處理使用者的輸入或互動（但不直接操作數據）。
+- **Controller（控制器）**：負責處理使用者請求，調用 Model 取得或更新數據，並決定回傳哪個 View 來呈現結果。
 
 ![MVC 流程](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/MVC-Process.svg/1200px-MVC-Process.svg.png)
 
