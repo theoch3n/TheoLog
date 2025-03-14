@@ -85,11 +85,18 @@ public class Product {
 ## **📍 面試可能會問的延伸問題**
 
 1. **MVC 和 MVVM（Model-View-ViewModel）有什麼不同？**
-    - `MVVM` 多了一層 `ViewModel`，主要用於雙向數據綁定，適合前端框架（如 React、Vue.js、Angular）。
-2. **ASP.NET Core MVC 和 Razor Pages 的區別？**
+    - **MVC（Model-View-Controller）**
+	    - `Controller` 負責處理使用者請求，與 `Model` 交互，然後選擇適當的 `View` 呈現數據。
+	    - `View` 主要是被動地接收數據，不會直接與 `Model` 互動。
+	    - **適合：** 傳統 Web 開發，如 ASP.NET MVC、Spring MVC、Django。
+	- **MVVM（Model-View-ViewModel）**
+	    - `ViewModel` 介於 `Model` 和 `View` 之間，負責數據處理與 UI 邏輯。
+	    - `View` 與 `ViewModel` 透過 **雙向數據綁定（Two-way Data Binding）** 直接同步，減少手動 DOM 操作。
+	    - **適合：** 前端框架，如 Vue.js、React（使用 Hooks 和 state 來類似實現）、Angular。
+1. **ASP.NET Core MVC 和 Razor Pages 的區別？**
     - `MVC` 適合大型 Web 應用，有明確的 `Controller`。
     - `Razor Pages` 更簡單，適合小型應用，View 和業務邏輯在同一個 `.cshtml.cs` 檔案內。
-3. **可以不用 Controller 直接渲染 View 嗎？**
+2. **可以不用 Controller 直接渲染 View 嗎？**
     - 可以使用 `ViewComponent` 或 `Razor Pages`，但 MVC 架構鼓勵使用 `Controller` 來管理請求。
 
 ---
