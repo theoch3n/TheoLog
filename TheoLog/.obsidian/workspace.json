@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "5888dfc014d8209e",
+        "id": "dfd059ac6308c979",
         "type": "tabs",
         "children": [
           {
-            "id": "52b7733b6472261b",
+            "id": "520d7d601c574bcf",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Notes/Power Apps/1. Overview.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "1. Overview"
+              "title": "新分頁"
             }
           }
         ]
@@ -140,13 +136,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Notes/Power Apps/1. Overview.md",
+                "file": "Notes/Power Apps/3. Plugin.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "1. Overview 的大綱"
+              "title": "3. Plugin 的大綱"
             }
           },
           {
@@ -177,10 +173,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "52b7733b6472261b",
+  "active": "520d7d601c574bcf",
   "lastOpenFiles": [
-    "Notes/Power Apps/2. Web Resource.md",
     "Notes/Power Apps/1. Overview.md",
+    "Notes/Power Apps/2. Web Resource.md",
+    "Notes/Power Apps/3. Plugin.md",
     "Interview Questions/哲煜/如何限制 API 只能被呼叫一次？（防止重複請求）.md",
     "Notes/Power Apps",
     "Notes/未命名.md",
@@ -206,7 +203,6 @@
     "Interview Questions/哲煜/(未完成)Vue.js 的生命週期（Lifecycle）.md",
     "Interview Questions/哲煜/(未完成)Vue 響應式背後的原理 & 使用純 JavaScript 如何實作？.md",
     "Interview Questions/哲煜/(未完成)如何處理查詢大量數據導致 Timeout 問題？.md",
-    "Interview Questions/哲煜/(未完成)批次處理（Batch Processing）.md",
     "Interview Questions/哲煜",
     "未命名 1.canvas",
     "未命名.canvas",
