@@ -11,10 +11,14 @@
             "id": "520d7d601c574bcf",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Notes/Power Apps/3. Plugin.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新分頁"
+              "title": "3. Plugin"
             }
           }
         ]
