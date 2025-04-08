@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Notes/Power Apps/3. Plugin.md",
+                "file": "Notes/Power Apps/2. Web Resource.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "3. Plugin"
+              "title": "2. Web Resource"
             }
           }
         ]
@@ -179,10 +179,10 @@
   },
   "active": "520d7d601c574bcf",
   "lastOpenFiles": [
+    "Notes/Power Apps/3. Plugin.md",
     "Notes/Power Apps/2. Web Resource.md",
     "Notes/Power Apps/4. Lookup & WebApi.md",
     "Notes/Power Apps/1. Overview.md",
-    "Notes/Power Apps/3. Plugin.md",
     "Interview Questions/哲煜/如何限制 API 只能被呼叫一次？（防止重複請求）.md",
     "Notes/Power Apps",
     "Notes/未命名.md",
