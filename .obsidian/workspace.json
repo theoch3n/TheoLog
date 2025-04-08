@@ -177,8 +177,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "520d7d601c574bcf",
+  "active": "02dc58da3c922245",
   "lastOpenFiles": [
+    "Notes/Power Apps/4. Lookup & WebApi.md",
     "Notes/Power Apps/1. Overview.md",
     "Notes/Power Apps/3. Plugin.md",
     "Notes/Power Apps/2. Web Resource.md",
@@ -206,7 +207,6 @@
     "Template/Template.md",
     "Interview Questions/哲煜/(未完成)Vue.js 的生命週期（Lifecycle）.md",
     "Interview Questions/哲煜/(未完成)Vue 響應式背後的原理 & 使用純 JavaScript 如何實作？.md",
-    "Interview Questions/哲煜/(未完成)如何處理查詢大量數據導致 Timeout 問題？.md",
     "Interview Questions/哲煜",
     "未命名 1.canvas",
     "未命名.canvas",
