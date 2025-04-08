@@ -1,6 +1,9 @@
-function sayHello(){
-    alert("Hello!");
+function sayHello() {
+  alert("Hello!");
 }
-function sayGoodbye(){
-    alert("Goodbye!");
+function sayGoodbye(Parameter) {
+  alert("Goodbye!" + Parameter);
+}
+function myEnableRule() {
+  return true;
 }
