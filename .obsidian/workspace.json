@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "53ef0eabbf374815",
@@ -181,8 +180,9 @@
   },
   "active": "520d7d601c574bcf",
   "lastOpenFiles": [
-    "Notes/Power Apps/2. Web Resource.md",
+    "Notes/Power Apps/5. Action.md",
     "Notes/Power Apps/3. Plugin.md",
+    "Notes/Power Apps/2. Web Resource.md",
     "Notes/Power Apps/4. Lookup & WebApi.md",
     "Notes/Power Apps/1. Overview.md",
     "Interview Questions/哲煜/如何限制 API 只能被呼叫一次？（防止重複請求）.md",
@@ -208,7 +208,6 @@
     "Template/Template/Interview Questions Template.md",
     "Template/Template.md",
     "Interview Questions/哲煜/(未完成)Vue.js 的生命週期（Lifecycle）.md",
-    "Interview Questions/哲煜/(未完成)Vue 響應式背後的原理 & 使用純 JavaScript 如何實作？.md",
     "Interview Questions/哲煜",
     "未命名 1.canvas",
     "未命名.canvas",
