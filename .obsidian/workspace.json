@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "dfd059ac6308c979",
+        "id": "88ef3be11ab7c59f",
         "type": "tabs",
         "children": [
           {
-            "id": "520d7d601c574bcf",
+            "id": "14b18940d962391c",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "53ef0eabbf374815",
@@ -158,9 +159,19 @@
               "icon": "git-pull-request",
               "title": "Source Control"
             }
+          },
+          {
+            "id": "54e84b2bacef7fa7",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {},
+              "icon": "spreadsheet",
+              "title": "Advanced Tables"
+            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -169,21 +180,25 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
       "switcher:開啟快速切換": false,
       "graph:查看關聯圖": false,
       "canvas:建立新畫布": false,
       "daily-notes:開啟今天的每日筆記": false,
       "templates:插入模板": false,
       "command-palette:開啟命令面板": false,
-      "obsidian-git:Open Git source control": false
+      "obsidian-git:Open Git source control": false,
+      "markdown-importer:開啟 Markdown 格式轉換器": false,
+      "templater-obsidian:Templater": false,
+      "omnisearch:Omnisearch": false
     }
   },
-  "active": "520d7d601c574bcf",
+  "active": "14b18940d962391c",
   "lastOpenFiles": [
+    "Notes/ARTSolutions/開發規範/WebResource 開發規範.md",
+    "Notes/ARTSolutions/開發規範/PluginAssembly 開發規範.md",
     "Notes/ARTSolutions/開發規範/RibbonButton 開發規範.md",
     "Notes/ARTSolutions/開發規範/BC 開發規範.md",
-    "Notes/ARTSolutions/開發規範/PluginAssembly 開發規範.md",
-    "Notes/ARTSolutions/開發規範/WebResource 開發規範.md",
     "Notes/Power Apps/memo 0417.md",
     "Notes/ARTSolutions/開發規範",
     "Notes/ARTSolutions",
