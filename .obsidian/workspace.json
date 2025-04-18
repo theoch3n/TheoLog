@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Notes/ARTSolutions/開發規範/RibbonButton 開發規範.md",
+                "file": "Notes/ARTSolutions/開發規範/WebResource 開發規範.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "RibbonButton 開發規範"
+              "title": "WebResource 開發規範"
             }
           }
         ]
@@ -180,8 +180,9 @@
   },
   "active": "520d7d601c574bcf",
   "lastOpenFiles": [
-    "Notes/ARTSolutions/開發規範/PluginAssembly 開發規範.md",
     "Notes/ARTSolutions/開發規範/RibbonButton 開發規範.md",
+    "Notes/ARTSolutions/開發規範/BC 開發規範.md",
+    "Notes/ARTSolutions/開發規範/PluginAssembly 開發規範.md",
     "Notes/ARTSolutions/開發規範/WebResource 開發規範.md",
     "Notes/Power Apps/memo 0417.md",
     "Notes/ARTSolutions/開發規範",
@@ -210,7 +211,6 @@
     "Interview Questions/哲煜/async、await、Task 的運作.md",
     "Interview Questions/哲煜/Array 和 List 的差異（CSharp、Java、JavaScript）.md",
     "Interview Questions/哲煜/OAuth 1 vs OAuth 2 差異.md",
-    "Interview Questions/哲煜/Main thread 遇到 async, await 會如何運作？.md",
     "Interview Questions/哲煜",
     "未命名 1.canvas",
     "未命名.canvas",

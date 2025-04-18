@@ -2,33 +2,34 @@
 
 - **基本結構範例:**
 ```html
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>WebResourceName</title> </head>
-    <body>
-        <h1>這是一個 HTML WebResource</h1>
-        <p>這裡可以放表單、按鈕或其他元素。</p>
-    </body>
-    <script>
-        // *** 只會在這個 WebResource 中使用到的邏輯寫在這裡 ***
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <meta charset="UTF-8">
+	    <title>WebResourceName</title>
+	</head>
+	<body>
+	    <h1>這是一個 HTML WebResource</h1>
+	    <p>這裡可以放表單、按鈕或其他元素。</p>
+	</body>
+	<script>
+	    // *** 只會在這個 WebResource 中使用到的邏輯寫在這裡 ***
     
-        // 例如：初始化頁面上的特定按鈕事件
-        function initializePage() {
-            const myButton = document.getElementById('mySpecialButton');
-            if (myButton) {
-                myButton.addEventListener('click', function() {
-                    alert('按鈕被點擊了！此邏輯僅用於此頁面。');
-                });
-            }
+	    // 例如：初始化頁面上的特定按鈕事件
+	    function initializePage() {
+        const myButton = document.getElementById('mySpecialButton');
+        if (myButton) {
+            myButton.addEventListener('click', function() {
+                alert('按鈕被點擊了！此邏輯僅用於此頁面。');
+            });
         }
+    }
     
-        // 頁面載入時執行初始化
-        window.onload = initializePage;
+    // 頁面載入時執行初始化
+    window.onload = initializePage;
     
     </script>
-    </html>
+</html>
 ```
 - **核心概念:**
     - **關注點分離**: 如上例所示，通用的 JavaScript 邏輯應抽離成獨立的 Library (Script WebResource) 並在 `<head>` 中引用。特定於此 HTML 頁面的邏輯（如 `initializePage` 函數）則直接寫在頁面底部的 `<script>` 標籤內。
