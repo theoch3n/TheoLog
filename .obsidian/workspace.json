@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Notes/Power Apps/OData.md",
+                "file": "Notes/Power Apps/memo 0417.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "OData"
+              "title": "memo 0417"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#Dataverse",
+                "query": " ",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,8 +74,7 @@
               "title": "書籤"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -141,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Notes/Power Apps/OData.md",
+                "file": "Notes/Power Apps/memo 0417.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "OData 的大綱"
+              "title": "memo 0417 的大綱"
             }
           },
           {
@@ -191,21 +190,23 @@
       "markdown-importer:開啟 Markdown 格式轉換器": false
     }
   },
-  "active": "37aadcdefea766d4",
+  "active": "14b18940d962391c",
   "lastOpenFiles": [
-    "Notes/Power Apps/Event Execution Pipeline.md",
-    "Notes/Power Apps/OData.md",
-    "Notes/Power Apps/Action.md",
+    "Notes/ARTSolutions/新進工程師學習目標/5. 開發項目狀態控制.md",
     "Notes/Power Apps/memo 0417.md",
+    "Notes/Power Apps/Lookup & WebApi.md",
+    "Notes/ARTSolutions/新進工程師學習目標/3. 計算自動編號.md",
+    "Notes/Power Apps/OData.md",
+    "Notes/Power Apps/Event Execution Pipeline.md",
+    "Notes/ARTSolutions/開發規範/RibbonButton 開發規範.md",
+    "Notes/ARTSolutions/開發規範/WebResource 開發規範.md",
+    "Notes/Power Apps/Action.md",
     "Template/Template/Bug Report Template.md",
     "Template/Template/Interview Questions Template.md",
     "Notes/Power Apps/Overview.md",
     "Notes/Power Apps/Web Resource.md",
     "Notes/Power Apps/Plugin.md",
-    "Notes/Power Apps/Lookup & WebApi.md",
-    "Notes/ARTSolutions/新進工程師學習目標/3. 計算自動編號.md",
     "Notes/Power Apps/PowerApps Learning.md",
-    "Notes/ARTSolutions/新進工程師學習目標/5. 開發項目狀態控制.md",
     "Notes/ARTSolutions/新進工程師學習目標/4. 計算最佳人選.md",
     "Notes/ARTSolutions/新進工程師學習目標/1. 員工管理系統建置.md",
     "Notes/ARTSolutions/新進工程師學習目標/2. 開發項目Table建置.md",
@@ -218,8 +219,6 @@
     "Interview Questions/哲煜/(未完成)Vue.js 的生命週期（Lifecycle）.md",
     "Interview Questions/哲煜/什麼是 DI（Dependency Injection，依賴注入）？.md",
     "Interview Questions/哲煜/(未完成)Vue 響應式背後的原理 & 使用純 JavaScript 如何實作？.md",
-    "Interview Questions/哲煜/(未完成)批次處理（Batch Processing）.md",
-    "Interview Questions/哲煜/(未完成)如何處理查詢大量數據導致 Timeout 問題？.md",
     "Notes/ARTSolutions/開發規範",
     "Notes/ARTSolutions",
     "未命名",

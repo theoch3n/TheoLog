@@ -1,5 +1,6 @@
+
 #### 📅 **Date**: 2025-04-18 
-#### 🔖 **Tags**: #OData #WebApi #Standard #Protocol #Dynamics365 #Dataverse #BusinessCentral
+#### 🔖 **Tags**: #OData #WebApi #Standard #Dynamics365 #Dataverse #BusinessCentral
 
 ---
 # OData (Open Data Protocol) 說明
@@ -69,10 +70,69 @@
 
 ---
 
+## 如何使用 OData (以開發者角度)
+
+開發者或應用程式可以透過多種方式與 OData 服務互動，最直接的方式是發送 HTTP 請求。
+
+**基本步驟：**
+
+1.  **取得服務根 URL (Service Root URL):**
+    * 找到 OData 服務的基礎進入點。
+    * 範例 (Dataverse Web API): `https://<your-org-name>.api.crm<region>.dynamics.com/api/data/v9.2/`
+2.  **建構資源 URI (Resource URI):**
+    * 在根 URL 後加上要存取的資源路徑。
+    * 範例：
+        * 讀取所有客戶：`/accounts`
+        * 讀取特定客戶：`/accounts(00000000-0000-0000-0000-000000000001)`
+        * 讀取特定客戶的姓名：`/accounts(00000000-0000-0000-0000-000000000001)/name`
+3.  **選擇 HTTP 方法 (HTTP Method):**
+    * `GET`: 讀取資料。
+    * `POST`: 建立資料。
+    * `PATCH`: 更新資料 (部分更新)。
+    * `DELETE`: 刪除資料。
+4.  **(可選) 加入查詢選項 (Query Options - 主要用於 GET):**
+    * 將 `$` 選項附加到資源 URI 後面 (注意 URL 編碼)。
+    * 範例：
+        * `/accounts?$select=name,telephone1` (只選取名稱和電話)
+        * `/accounts?$filter=address1_city eq 'Taipei'` (篩選城市為台北的客戶)
+        * `/accounts?$orderby=createdon desc` (依建立日期降冪排序)
+        * `/accounts?$top=5` (只取前 5 筆)
+        * `/accounts(guid)?$expand=primarycontactid($select=fullname)` (讀取客戶並展開主要連絡人姓名)
+5.  **設定 HTTP 標頭 (HTTP Headers):**
+    * `Accept`: `application/json` (期望收到 JSON 格式的回應)
+    * `Content-Type`: `application/json` (當傳送資料 (`POST` / `PATCH`) 時)
+    * `Authorization`: `Bearer <access_token>` (進行驗證授權)
+    * `OData-MaxVersion`: `4.0`
+    * `OData-Version`: `4.0`
+    * `Prefer`: `odata.include-annotations="*"` (包含額外標註資訊) 或 `return=representation` (要求 POST/PATCH 後回傳建立/更新後的資料)
+6.  **(可選) 提供請求主體 (Request Body - 用於 POST/PATCH):**
+    * 將要建立或更新的資料，依照中繼資料定義的結構，格式化為 JSON 字串。
+    * 範例 (建立 Account):
+      ```json
+      {
+        "name": "新客戶 A",
+        "telephone1": "02-12345678"
+      }
+      ```
+7.  **發送請求與處理回應:**
+    * 使用 HTTP 客戶端工具 (如 Postman, curl) 或程式語言的 HTTP 函式庫 (如 JavaScript 的 `Workspace`, C# 的 `HttpClient`, Python 的 `requests`) 發送請求。
+    * 檢查回應的 HTTP 狀態碼 (例如 `200 OK`, `201 Created`, `204 No Content`, `4xx` 用戶端錯誤, `5xx` 伺服器錯誤)。
+    * 解析回應主體 (通常是 JSON)。
+    * 處理分頁：如果回應包含 `@odata.nextLink`，表示還有下一頁資料，需用此連結繼續請求。
+
+**其他使用方式：**
+
+* **用戶端函式庫:** 許多語言有 OData 用戶端函式庫，可以簡化請求的建立和回應的解析。
+* **平台 SDK:** 如 `Xrm.WebApi` (Power Apps Client API) 內部封裝了 OData 呼叫。
+* **BI 工具:** Power BI, Excel (Power Query) 等工具內建 OData 連接器。
+* **Low-code/No-code:** Power Automate 等平台的連接器底層也常使用 OData。
+
+---
+
 ## 與 Dynamics 365 / BC 的關聯
 
 -   **Dataverse Web API：** 就是一個 OData v 4 服務端點，是與 Dataverse 互動的主要方式。先前筆記中用 `Xrm.WebApi.online.execute` 呼叫 Action，底層就是透過 OData。
 -   **Business Central APIs：** 也提供基於 OData 的 API 供外部整合。
 -   **Plugin 觸發：** 如先前文件所述，由 OData 端點觸發的事件也能執行 Plugin，顯示其在平台中的整合性。
 
-總之，OData 是建立現代化、彈性且易於整合的 Web API 的重要標準。
+總之，OData 是建立現代化、彈性且易於整合的 Web API 的重要標準。透過組合 URI、HTTP 方法、標頭和查詢選項，可以靈活地與支援 OData 的服務進行互動。

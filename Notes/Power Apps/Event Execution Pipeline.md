@@ -1,23 +1,19 @@
-#### 📅 **Date**: 2025-04-18
-#### 🔖 **Tags**: #PluginAssembly  #Pipeline #Dynamics365 #Dataverse #PowerPlatform #EventProcessing
+#### 📅 **Date**: 2025-04-18 
+#### 🔖 **Tags**: #PluginAssembly #Pipeline #Dynamics365 #Dataverse #PowerPlatform #EventProcessing
 
 ---
-# 事件執行 Pipeline (Event Execution Pipeline)
-
-這份筆記整理自 Microsoft Learn 文件，說明 Dynamics 365 / Power Platform Dataverse 中，事件處理子系統如何基於**訊息管線執行模型 (Message Pipeline Execution Model)** 來執行外掛程式 (Plug-ins)。
-
 ## 核心概念：事件執行 Pipeline
 
 -   當使用者操作或 SDK 呼叫觸發 Dataverse 中的事件時，系統會產生一個**訊息 (Message)**。
 -   此訊息包含業務實體資訊和核心操作資訊。
--   訊息會被傳遞到**事件執行管線 (Event Execution Pipeline)** 中，依序由平台核心操作和已註冊的外掛程式處理。
+-   訊息會被傳遞到**事件執行 Pipeline (Event Execution Pipeline)** 中，依序由平台核心操作和已註冊的外掛程式處理。
 -   外掛程式可以讀取或修改流經管線的訊息內容。
 
 ---
 
 ## 架構與處理模式
 
-事件執行管線可以處理**同步 (Synchronous)** 和**非同步 (Asynchronous)** 的事件：
+事件執行 Pipeline 可以處理**同步 (Synchronous)** 和**非同步 (Asynchronous)** 的事件：
 
 * **同步執行 (Synchronous Execution):**
     * 註冊為同步執行的外掛程式和平台核心操作會**立即**在主執行緒中被觸發。
@@ -32,76 +28,18 @@
 
 ---
 
-## Pipeline 階段 (Pipeline Stages)
+## Pipeline 階段 (Pipeline Stages) 詳解與範例
 
-事件執行管線包含多個階段，其中 4 個主要階段可供註冊自訂外掛程式：
+事件執行 Pipeline 包含多個階段，其中 4 個主要階段可供註冊自訂外掛程式。以下結合官方定義與社群範例說明：
 
-| 事件類型       | 階段名稱                    | 階段編號 (`Stage`) | 描述                                            | 交易性     |
+| 事件類型       | 階段名稱                    | 階段編號 (`Stage`) | 描述 (官方)                                       | 交易性     |
 | :--------- | :---------------------- | :------------- | :-------------------------------------------- | :------ |
 | Pre-Event  | **Pre-validation**      | **10**         | 主要操作**之前**執行。可能在資料庫交易**外部**。安全性檢查**之前**執行。    | 可能不在交易內 |
 | Pre-Event  | **Pre-operation**       | **20**         | 主要操作**之前**執行。在資料庫交易**內部**執行。                  | **是**   |
 |            | Platform Core Operation | 30             | 平台核心操作 (Create/Update/Delete)。**無法**註冊自訂外掛程式。 | 是       |
 | Post-Event | **Post-operation**      | **40**         | 主要操作**之後**執行。在資料庫交易**內部**執行。                  | **是**   |
 
-* **Pre-Event Stages (事件前階段):** 包含 `Pre-validation` 和 `Pre-operation`。
-* **Post-Event Stage (事件後階段):** 主要指 `Post-operation`。
-
----
-
-## 訊息處理 (Message Processing)
-
--   Web 服務呼叫的參數會被打包成 `OrganizationRequest` 訊息。
--   訊息依序傳遞給管線中的外掛程式。
--   外掛程式透過傳入 `Execute` 方法的 `IPluginExecutionContext` 來存取訊息上下文，可讀取或修改內容。
--   核心操作完成後，訊息變為 `OrganizationResponse`。
--   回應再傳遞給 Post-event 階段的外掛程式處理。
--   最終回應返回給原始呼叫者。
-
----
-
-## 外掛程式註冊 (Plug-in Registration)
-
--   可將外掛程式註冊在核心平台操作**之前** (`Pre-event`) 或**之後** (`Post-event`)。
--   執行管線是針對**每個組織 (Organization)** 的，外掛程式需在目標組織中註冊才能運作。
-
----
-
-## 資料庫交易 (Database Transactions)
-
--   外掛程式是否在資料庫交易內執行，取決於註冊的階段。
-    * `Stage 20` (**Pre-operation**) 和 `Stage 40` (**Post-operation**) **保證**在交易內。
-    * `Stage 10` (**Pre-validation**) 可能在交易外。
--   可透過 `IPluginExecutionContext` 的 `IsInTransaction` 屬性檢查。
--   **重要：** 如果在交易內執行的外掛程式 (`Stage 20` 或 `Stage 40`) 拋出未處理的例外，**整個交易將會回復 (Rollback)**。
--   交易回復會取消核心操作、尚未執行的同步外掛程式及相關工作流程。
-
----
-
-## 總結
-
-Dynamics 365/Dataverse 的事件執行管線提供了一個結構化的方式來處理業務操作和執行自訂程式碼。理解不同階段的特性（特別是執行時間點和交易性）、同步與非同步模式，對於開發可靠、高效能的外掛程式至關重要。
-
----
-#### 📅 **Date**: 2025-04-18 
-#### 🔖 **Tags**: #Plugin #Pipeline #Dynamics365 #Dataverse #PreValidation #PreOperation #PostOperation #CommunityAnswers
-
----
-# Plugin 執行階段：Pre-validation, Pre-operation, Post-operation
-
-## 核心概念複習
-
-事件執行管線 (Event Execution Pipeline) 依序處理資料操作請求。外掛程式 (Plugin) 可以註冊在特定階段執行。主要可註冊的同步階段有：
-
-1.  **Pre-validation (驗證前階段 - Stage 10)**
-2.  **Pre-operation (操作前階段 - Stage 20)**
-3.  **(MainOperation - Stage 30 - 平台核心操作，無法註冊)**
-4.  **Post-operation (操作後階段 - Stage 40)**
-
----
-
-## 各階段詳解與範例
-
-### 1. Pre-validation (Stage 10)
+### 1. Pre-validation (驗證前階段 - Stage 10)
 
 * **定義：** 在系統進行**主要驗證之前**執行。此階段**可能在資料庫交易之外**。安全性檢查也在此階段**之前**執行。
 * **時機：** 管線的最早階段，早於大部分表單驗證和資料庫儲存。
@@ -112,7 +50,7 @@ Dynamics 365/Dataverse 的事件執行管線提供了一個結構化的方式來
     * **刪除 (Delete) 操作相關：** 如果需要在刪除主記錄前，存取**即將被連帶刪除的子記錄**資訊，則 `Delete` 事件的 Plugin 需註冊在此階段，因為連帶刪除 (Cascading Deletes) 可能在 Pre-operation 之前就已處理完畢。
     * **基本驗證：** 檢查傳入的資料是否符合特定格式，或是否滿足某些與資料庫無關的條件。
 
-### 2. Pre-operation (Stage 20)
+### 2. Pre-operation (操作前階段 - Stage 20)
 
 * **定義：** 在系統驗證**之後**，但在資料**實際儲存到資料庫之前**執行。此階段**在資料庫交易之內**。
 * **時機：** 記錄尚未儲存，沒有 ID (對於 Create 而言)。
@@ -125,7 +63,7 @@ Dynamics 365/Dataverse 的事件執行管線提供了一個結構化的方式來
 
 > **注意：** 若在 Pre-validation 修改了 `Target` Entity 的屬性，這些修改可能會在此階段被 Pre-operation 的邏輯覆蓋。
 
-### 3. Post-operation (Stage 40)
+### 3. Post-operation (操作後階段 - Stage 40)
 
 * **定義：** 在資料**已經成功儲存到資料庫之後**執行。此階段**仍在資料庫交易之內**。
 * **時機：** 記錄已儲存，資料庫交易尚未提交 (Commit)。對於 `Create` 事件，此時記錄已有 ID (GUID) 可供使用。
@@ -142,12 +80,39 @@ Dynamics 365/Dataverse 的事件執行管線提供了一個結構化的方式來
         * 建立相關的待辦事項 (Task)。
         * 觸發外部系統整合或內部其他流程。
 
----
-
-## MainOperation (Stage 30)
+### MainOperation (Stage 30)
 
 * 這是**平台核心操作**的執行階段，例如實際的資料庫 Create, Update, Delete。
 * **無法**在此階段註冊自訂外掛程式。
+
+---
+
+## 訊息處理 (Message Processing)
+
+-   Web 服務呼叫的參數會被打包成 `OrganizationRequest` 訊息。
+-   訊息依序傳遞給 Pipeline 中的外掛程式。
+-   外掛程式透過傳入 `Execute` 方法的 `IPluginExecutionContext` 來存取訊息上下文，可讀取或修改內容。
+-   核心操作完成後，訊息變為 `OrganizationResponse`。
+-   回應再傳遞給 Post-event 階段的外掛程式處理。
+-   最終回應返回給原始呼叫者。
+
+---
+
+## 外掛程式註冊 (Plug-in Registration)
+
+-   可將外掛程式註冊在核心平台操作**之前** (`Pre-event`) 或**之後** (`Post-event`)。
+-   執行 Pipeline 是針對**每個組織 (Organization)** 的，外掛程式需在目標組織中註冊才能運作。
+
+---
+
+## 資料庫交易 (Database Transactions)
+
+-   外掛程式是否在資料庫交易內執行，取決於註冊的階段。
+    * `Stage 20` (**Pre-operation**) 和 `Stage 40` (**Post-operation**) **保證**在交易內。
+    * `Stage 10` (**Pre-validation**) 可能在交易外。
+-   可透過 `IPluginExecutionContext` 的 `IsInTransaction` 屬性檢查。
+-   **重要：** 如果在交易內執行的外掛程式 (`Stage 20` 或 `Stage 40`) 拋出未處理的例外，**整個交易將會回復 (Rollback)**。
+-   交易回復會取消核心操作、尚未執行的同步外掛程式及相關工作流程。
 
 ---
 
@@ -159,9 +124,15 @@ Dynamics 365/Dataverse 的事件執行管線提供了一個結構化的方式來
 | **Pre-operation** | 儲存前，交易內           | **是** | **修改 Target 資料**、儲存前計算/驗證                                        | 無            | **是** |
 | **Post-operation** | 儲存後，交易內           | **是** | 處理**已儲存記錄**的後續動作 (需 GUID)、更新相關記錄、觸發通知/流程等 | **有** | 否 (需另 Update)   |
 
-選擇哪個階段取決於：
+**選擇哪個階段取決於：**
 
 * **執行時間點：** 您需要在資料儲存前還是儲存後執行邏輯？
 * **資料修改需求：** 您是否需要修改正在被處理的這筆記錄 (`Target`)？如果是，`Pre-operation` 通常是最高效的選擇。
 * **GUID 需求：** 您的邏輯是否需要知道記錄的 ID (特別是新建記錄時)？如果是，`Post-operation` 是唯一選擇。
 * **交易性需求：** 您的操作是否需要與主要操作在同一個資料庫交易內，以確保資料一致性（成功則一起成功，失敗則一起回復）？如果是，選擇 `Pre-operation` 或 `Post-operation`。
+
+---
+
+**整體總結：**
+
+Dynamics 365/Dataverse 的事件執行 Pipeline 提供了一個結構化的方式來處理業務操作和執行自訂程式碼。理解不同階段的特性（特別是執行時間點和交易性）、同步與非同步模式，對於開發可靠、高效能的外掛程式至關重要。
