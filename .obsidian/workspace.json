@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "53ef0eabbf374815",
@@ -169,33 +168,14 @@
               "icon": "spreadsheet",
               "title": "Advanced Tables"
             }
-          },
-          {
-            "id": "9189f6b207af7f1d",
-            "type": "leaf",
-            "state": {
-              "type": "smart-connections-view",
-              "state": {},
-              "icon": "smart-connections",
-              "title": "Smart Connections"
-            }
-          },
-          {
-            "id": "717acd49c069e97a",
-            "type": "leaf",
-            "state": {
-              "type": "smart-lookup-view",
-              "state": {},
-              "icon": "search",
-              "title": "Smart Lookup"
-            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -207,15 +187,12 @@
       "templates:插入模板": false,
       "command-palette:開啟命令面板": false,
       "obsidian-git:Open Git source control": false,
-      "markdown-importer:開啟 Markdown 格式轉換器": false,
-      "templater-obsidian:Templater": false,
-      "omnisearch:Omnisearch": false,
-      "smart-connections:Open: View Smart Connections": false,
-      "smart-connections:Open: Smart Chat Conversation": false
+      "markdown-importer:開啟 Markdown 格式轉換器": false
     }
   },
-  "active": "14b18940d962391c",
+  "active": "02dc58da3c922245",
   "lastOpenFiles": [
+    "Notes/ARTSolutions/新進工程師學習目標",
     "Notes/Power Apps/memo 0417.md",
     "Bug Report/Fixed/修復 Bootstrap Modal 切換 Router 後的樣式殘留 (灰色遮罩) 問題.md",
     "Dev Diary/2025/FEB/20250220.md",
@@ -241,7 +218,6 @@
     "Notes/Power Apps/5. Action.md",
     "Notes/Power Apps/4. Lookup & WebApi.md",
     "Notes/ARTSolutions/開發規範/PluginAssembly 開發規範.md",
-    "Notes/Power Apps/1. Overview.md",
     "Notes/ARTSolutions/開發規範",
     "Notes/ARTSolutions",
     "未命名",
