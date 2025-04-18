@@ -1,3 +1,9 @@
+#### 📅 **Date**: 2025-04-18
+
+#### 🔖 **Tags**: #WebResource #PowerApps #Dynamics365 #JavaScript #HTML
+
+---
+
 **1. HTML 類 WebResource**
 
 - **基本結構範例:**

@@ -1,3 +1,9 @@
+#### 📅 **Date**: 2025-04-18
+
+#### 🔖 **Tags**: #PluginAssembly #PowerApps #Dynamics365 #CSharp 
+
+---
+
 **1. 專案資料夾結構 (Folder Structure)**
 
 - **強制要求:** 每個 Plugin Assembly 的專案根目錄下**必須**包含一個名為 `Plugins` 的子資料夾。

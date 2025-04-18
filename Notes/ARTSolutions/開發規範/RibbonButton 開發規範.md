@@ -1,3 +1,9 @@
+#### 📅 **Date**: 2025-04-18
+
+#### 🔖 **Tags**: #RibbonButton #PowerApps #Dynamics365
+
+---
+
 1. **每個按鈕限制一個 Action 和一個 Enable Rule 函數：**
     - **說明：** 在定義 Ribbon Button 時，其「動作 (Action)」(點擊後執行的邏輯) 和「啟用規則 (Enable Rule)」(決定按鈕是否可用/可見的邏輯) 應該各自只對應到一個 JavaScript 函數。
     - **目的：** 保持 Ribbon Button 設定的簡潔和清晰。將按鈕的「做什麼」和「何時能做」的邏輯分別封裝在單一、明確的函數中，便於查找、理解和維護。
