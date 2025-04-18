@@ -1,0 +1,3 @@
+- 一個RibbonButton只能有一個action function及一個enable rule function。
+- Functional Library在RibbonButton中叫用的方式為：先呼叫Functional Library中叫做"load"的空function。
+- RibbonButton限制只能呼叫一個Action。如果有需要執行數個Action的話應該建立BTN Action，並由這個Action來呼叫其他Action。
