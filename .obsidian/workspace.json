@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Notes/Power Apps/5. Action.md",
+                "file": "Notes/Power Apps/Action.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "5. Action"
+              "title": "Action"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#Daniel",
+                "query": "tag:#EventProcessing",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "53ef0eabbf374815",
@@ -140,13 +141,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Notes/Power Apps/5. Action.md",
+                "file": "Notes/Power Apps/Action.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "5. Action 的大綱"
+              "title": "Action 的大綱"
             }
           },
           {
@@ -170,7 +171,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -192,14 +193,17 @@
   },
   "active": "14b18940d962391c",
   "lastOpenFiles": [
-    "Notes/Power Apps/4. Lookup & WebApi.md",
-    "Notes/Power Apps/5. Action.md",
-    "Notes/Power Apps/3. Plugin.md",
-    "Notes/Power Apps/2. Web Resource.md",
-    "Notes/Power Apps/1. Overview.md",
+    "Notes/Power Apps/Event Execution Pipeline.md",
+    "Notes/Power Apps/memo 0417.md",
+    "Template/Template/Bug Report Template.md",
+    "Template/Template/Interview Questions Template.md",
+    "Notes/Power Apps/Overview.md",
+    "Notes/Power Apps/Web Resource.md",
+    "Notes/Power Apps/Plugin.md",
+    "Notes/Power Apps/Lookup & WebApi.md",
+    "Notes/Power Apps/Action.md",
     "Notes/ARTSolutions/新進工程師學習目標/3. 計算自動編號.md",
     "Notes/Power Apps/PowerApps Learning.md",
-    "Notes/Power Apps/memo 0417.md",
     "Notes/ARTSolutions/新進工程師學習目標/5. 開發項目狀態控制.md",
     "Notes/ARTSolutions/新進工程師學習目標/4. 計算最佳人選.md",
     "Notes/ARTSolutions/新進工程師學習目標/1. 員工管理系統建置.md",
@@ -216,9 +220,6 @@
     "Interview Questions/哲煜/(未完成)批次處理（Batch Processing）.md",
     "Interview Questions/哲煜/(未完成)如何處理查詢大量數據導致 Timeout 問題？.md",
     "Interview Questions/哲煜/(未完成)如何在 Vue 中使用 jQuery？.md",
-    "Interview Questions/易可思/(未完成)Virtual DOM 的理解.md",
-    "Interview Questions/易可思/(未完成)Promise & Async Await 的功用與區別.md",
-    "Interview Questions/易可思/(未完成)Process 是什麼？.md",
     "Notes/ARTSolutions/開發規範",
     "Notes/ARTSolutions",
     "未命名",

@@ -1,6 +1,6 @@
 #### 📅 **Date**: 20XX-XX-XX
 
-#### 🔖 **Tags**: `#Tags`
+#### 🔖 **Tags**: #Template  
 
 ---
 
