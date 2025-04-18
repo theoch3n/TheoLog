@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": " ",
+                "query": "tag:#Plugin",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,11 +74,13 @@
               "title": "書籤"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "53ef0eabbf374815",
@@ -192,8 +194,10 @@
   },
   "active": "14b18940d962391c",
   "lastOpenFiles": [
-    "未命名.md",
+    "Notes/Power Apps/memo 0417.md",
+    "Notes/Power Apps/Practice/員工 & 開發項目管理系統/5. 開發項目狀態控制.md",
     "Notes/Power Apps/memo 0418.md",
+    "未命名.md",
     "Notes/Power Apps/OData.md",
     "Notes/Power Apps/Lookup & WebApi.md",
     "Notes/Power Apps/Action.md",
@@ -202,12 +206,10 @@
     "Notes/ARTSolutions/開發規範/WebResource 開發規範.md",
     "Notes/ARTSolutions/開發規範/RibbonButton 開發規範.md",
     "Notes/ARTSolutions/開發規範/PluginAssembly 開發規範.md",
-    "Notes/Power Apps/Practice/員工 & 開發項目管理系統/5. 開發項目狀態控制.md",
     "Notes/Power Apps/Practice/員工 & 開發項目管理系統/3. 計算自動編號.md",
     "Notes/Power Apps/Practice/員工 & 開發項目管理系統/4. 計算最佳人選.md",
     "Notes/Power Apps/Practice/員工 & 開發項目管理系統/1. 員工管理系統建置.md",
     "Notes/Power Apps/Practice/員工 & 開發項目管理系統/2. 開發項目Table建置.md",
-    "Notes/Power Apps/memo 0417.md",
     "Template/Template/Bug Report Template.md",
     "Template/Template/Interview Questions Template.md",
     "Notes/Power Apps/Overview.md",
