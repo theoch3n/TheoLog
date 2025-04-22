@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Notes/Power Apps/memo 0421.md",
+                "file": "Notes/Power Apps/memo 0422.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "memo 0421"
+              "title": "memo 0422"
             }
           }
         ]
@@ -141,13 +141,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Notes/Power Apps/memo 0421.md",
+                "file": "Notes/Power Apps/memo 0422.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "memo 0421 的大綱"
+              "title": "memo 0422 的大綱"
             }
           },
           {
@@ -194,6 +194,7 @@
   "active": "14b18940d962391c",
   "lastOpenFiles": [
     "未命名.md",
+    "Notes/Power Apps/memo 0422.md",
     "Notes/Power Apps/memo 0421.md",
     "Notes/Power Apps/memo 0418.md",
     "Notes/Power Apps/memo 0417.md",
@@ -220,7 +221,6 @@
     "Bug Report/Fixed/修復 Bootstrap Modal 切換 Router 後的樣式殘留 (灰色遮罩) 問題.md",
     "Dev Diary/2025/FEB/20250220.md",
     "Interview Questions/勝海/(未完成)MySQL lock for update.md",
-    "Interview Questions/勝海/(未完成)瀏覽器中的事件循環 Event Loop.md",
     "Notes/ARTSolutions/開發規範",
     "Notes/ARTSolutions",
     "未命名",
