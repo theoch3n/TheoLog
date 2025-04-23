@@ -169,13 +169,24 @@
               "icon": "spreadsheet",
               "title": "Advanced Tables"
             }
+          },
+          {
+            "id": "32afc97fb2cbb27c",
+            "type": "leaf",
+            "state": {
+              "type": "mermaid-toolbar-view",
+              "state": {},
+              "icon": "trident-custom",
+              "title": "Mermaid Toolbar"
+            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -187,7 +198,8 @@
       "templates:插入模板": false,
       "command-palette:開啟命令面板": false,
       "obsidian-git:Open Git source control": false,
-      "markdown-importer:開啟 Markdown 格式轉換器": false
+      "markdown-importer:開啟 Markdown 格式轉換器": false,
+      "mermaid-tools:Open Mermaid Toolbar": false
     }
   },
   "active": "14b18940d962391c",
